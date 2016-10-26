@@ -13,22 +13,36 @@ title: Curriculum Vitae for Peter E. DeWitt
 <details>
 <ul>
 <li> expected Spring 2017 </li>
-<li> University of Colorado Anschutz Medical Campus </li>
+<li> University of Colorado Anschutz Medical Campus, Aurora, Colorado </li>
 </ul>
 </details>
 
+#### M.S. Statistics
+<details>
+<ul>
+<li> 2010 </li>
+<li> Colorado State University, Fort Collins, Colorado</li>
+</ul>
+</details>
 
+#### M.S. Mathematics and Computer Science
+<details>
+<ul>
+<li> 2007 </li>
+<li> Colorado School of Mines, Golden, Colorado</li>
+</ul>
+</details>
 
+#### B.S. Mathematics and Computer Science
+<details>
+<ul>
+<li> 2005 </li>
+<li> Colorado School of Mines, Golden, Colorado</li>
+<li> Graduate with High Honors </li>
+<li> Minor: Engineering </li>
+</ul>
+</details>
 
-
-#### M.S. Statistics (2010)
-* Colorado State University
-
-#### M.S. Mathematics and Computer Science (2007)
-* Colorado School of Mines
-
-#### B.S. Mathematics and Computer Science (2005)
-*   Colorado School of Mines
 
 ### Professional
 * Siebel 7.0
