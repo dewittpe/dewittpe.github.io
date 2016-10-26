@@ -186,7 +186,7 @@ title: Curriculum Vitae for Peter E. DeWitt
 <ul>
 <li> July 2016 </li>
 <li> Hosted by the [International Biometric Society](http://www.biometricsociety.org/) </li>
-<li> Victoria, British Columbia, Canada
+<li> Victoria, British Columbia, Canada </li>
 </ul>
 </details>
 
@@ -194,7 +194,7 @@ title: Curriculum Vitae for Peter E. DeWitt
 <details>
 <ul>
 <li> July 2016 </li>
-<li> Concurrent with 28th International Biometric Conference
+<li> Concurrent with 28th International Biometric Conference </li>
 <li> Victoria, British Columbia, Canada </li>
 </ul>
 </details>
