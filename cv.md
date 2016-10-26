@@ -8,7 +8,11 @@ title: Curriculum Vitae for Peter E. DeWitt
 
 * [Education](#education)
 * [Academic Appointments](#academic_appointments)
-
+* [Non-Academic Employment](#non_academic_employment)
+* [Honors and Awards](#honor_awards)
+* [Memberships](#memberships)
+* [Conferences](#Conferences)
+* [Bibliography](#Bibliography)
 
 ----
 
@@ -106,9 +110,32 @@ title: Curriculum Vitae for Peter E. DeWitt
 
 ----
 
-## <a name='non_academic_employment'></a> Non-Accademic Employment
+## <a name='non_academic_employment'></a> Non-Academic Employment
 
 [back to top](#top)
+
+#### Scientific Programmer
+<details>
+<ul>
+<li> Summer Graduate Intern </li>
+<li> National Renewable Energy Laboratory, Golden Colorado </li>
+</ul>
+</details>
+
+#### Technical Consultant, Siebel Developer
+<details>
+<ul>
+<li> Perficient, Inc. Denver Colorado </li>
+</ul>
+</details>
+
+#### Physical Science Technician
+<details>
+<ul>
+<li> National Water Quality Laboratory </li>
+<li> United States Geological Survey, Denver, Colorado </li>
+</ul>
+</details>
 
 ----
 
@@ -116,22 +143,72 @@ title: Curriculum Vitae for Peter E. DeWitt
 
 [back to top](#top)
 
+#### Best Student Oral Presentation, 28th International Biometric Conference
+<details>
+<ul>
+<li> July 2016 </li>
+<li> Awarded by [International Biometric Society](http://www.biometricsociety.org/) </li>
+<li> Victoria, British Columbia, Canada </li>
+</ul>
+</details>
+
+#### Distinguished Oral Presentation, WNAR Student Paper Competition
+<details>
+<ul>
+<li> July 2016 </li>
+<li> Awarded by Western North American Region (WNAR) of the [International Biometric Society](http://www.biometricsociety.org/) </li>
+<li> Victoria, British Columbia, Canada </li>
+</ul>
+</details>
+
+#### Graduated with High Honors (B.S. 2005) from the Colorado School of Mines
+
+#### Eagle Scout
+
 ----
 
 ## <a name='memberships'></a> Memberships
 
 [back to top](#top)
 
+* American Statistical Association
+* International Biometric Society
+  * Western North American Region (WNAR)
+
 ----
 
-## <a name='Conferences'></a> Conferneces
+## <a name='Conferences'></a> Conferences
 
 [back to top](#top)
+
+#### 28th International Biometric Conference
+<details>
+<ul>
+<li> July 2016 </li>
+<li> Hosted by the [International Biometric Society](http://www.biometricsociety.org/) </li>
+<li> Victoria, British Columbia, Canada
+</ul>
+</details>
+
+#### WNAR Annual Meeting 2016
+<details>
+<ul>
+<li> July 2016 </li>
+<li> Concurrent with 28th International Biometric Conference
+<li> Victoria, British Columbia, Canada </li>
+</ul>
+</details>
 
 ----
 
 ## <a name='Bibliography'></a> Bibliography
 
 [back to top](#top)
+
+<a href="https://scholar.google.com/citations?user={{ site.author.google_scholar }}" title="Peter DeWitt on Google Scholar" target="_blank">
+  <i class="ai ai-google-scholar-square ai-3x"></i>
+  <span class="label">Peter DeWitt on Google Scholar</span>
+</a>
+
 
 ----
