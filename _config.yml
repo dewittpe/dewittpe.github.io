@@ -3,7 +3,7 @@ title: Peter E. DeWitt
 description: 'I am a Ph.D. Candidate in Biostatistics at the University of Colorado Anshutz Medical Campus.'
 url: 'dewittpe.github.io'
 baseurl: '/'
-# google_analytics: 'UA-XXXXXX-X'
+google_analytics: 'UA-87261307-1'
 # disqus_shortname: 'your-disqus-name'
 
 author:
