@@ -1,0 +1,36 @@
+---
+title:  "R: Updating Objects"
+date:   2016-11-10
+categories: [R, programming]
+tags: [R, programming]
+---
+
+The `stats::update` function is one of my favorite tools in R.  Using this
+function saves a lot of time and effort when needing to modify an object.
+However, this function has its limits.  The following is an example of how to
+extend the use of `stats::update`.
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+## Basics of the `stats::update` function
+The
+[documentation](https://stat.ethz.ch/R-manual/R-devel/library/stats/html/update.html)
+for the `stats::update` function is a good starting place.  Of course, examples
+are even better.  We'll use the `diamonds` data set from within the [ggplot2](
+https://CRAN.R-project.org/package=ggplot2) package for the examples.
+
+```{r ggplot2-data}
+data("diamonds", package = "ggplot2")
+dplyr::glimpse(diamonds)
+```
+
+A simple regression model for the price of diamonds as a function of `carat`,
+`cut`, `color`, and `clarity`.
+
+
+## Acknowledgements
+I didn't figure out how to do this completely on my own.  I had posed a question
+on [stackoverflow](http://stackoverflow.com/q/25272387/1104685) which was the
+basis for this post and extensions.
