@@ -1099,12 +1099,26 @@ pre {
 .content-wrapper {
 	z-index: 800;
 	width: 60%;
-	max-width: 800px;
-	margin-left: 40%; }
+	/*max-width: 800px;*/
+	margin-left: 40%; 
+  display:inline-block;
+}
 
 .content-wrapper__inner {
-	margin: 0 10%;
-	padding: 50px 0; }
+	margin: 0 5%;
+	padding: 20px 0; 
+  display:inline-block;
+}
+.content-wrapper__innerl {
+  width:75%;
+  float:left;
+  display:inline-block;
+}
+.content-wrapper__innerr {
+  width:20%;
+  float:right;
+  display:inline-block;
+}
 
 .footer {
 	display: block;

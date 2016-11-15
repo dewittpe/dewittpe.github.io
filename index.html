@@ -5,6 +5,7 @@ layout: default
 <div class="main-post-list">
 
   <ol class="post-list">
+  <div class="content-wrapper__innerl">
     {% for post in paginator.posts %}
       <li>
         <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
@@ -14,6 +15,10 @@ layout: default
         <hr class="post-list__divider">
       </li>
     {% endfor %}
+  </div>
+  <div class="content-wrapper__innerr"> 
+    {% include sidebar.html %} 
+  </div>
   </ol>
 
   <hr class="post-list__divider ">

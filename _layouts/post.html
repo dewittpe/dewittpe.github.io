@@ -9,9 +9,16 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
   </header>
 
+  <div class="content-wrapper__innerl">
   <section class="post">
     {{ content }}
   </section>
+  </div>
+  <div class="content-wrapper__innerr">
+    {% include sidebar.html %}
+  </div>
+
   {% if page.comments != false and site.disqus_shortname %}<section id="disqus_thread"></section><!-- /#disqus_thread -->{% endif %}
 </article>
 {% if page.comments != false %}{% include disqus.html %}{% endif %}
+
