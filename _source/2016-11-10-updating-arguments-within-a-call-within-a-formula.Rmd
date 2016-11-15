@@ -1,7 +1,6 @@
 ---
-title:  "R: Updating Arguments in a call within a formula"
+title:  "Updating Arguments Within A Call Within A Formula"
 date:   2016-11-10
-categories: [R, programming]
 tags: [R, programming]
 ---
 
