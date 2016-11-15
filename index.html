@@ -6,6 +6,9 @@ layout: default
 
   <ol class="post-list">
   <div class="content-wrapper__innerl">
+    <h1> Minding Broken Clocks </h1>
+    A Blog.
+    <hr class="post-list__divider">
     {% for post in paginator.posts %}
       <li>
         <h2 class="post-list__post-title post-title"><a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" title="{{ post.title }}">{{ post.title }}</a></h2>
