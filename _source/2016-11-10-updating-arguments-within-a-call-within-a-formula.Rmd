@@ -1,5 +1,5 @@
 ---
-title:  "Updating Arguments Within A Call Within A Formula"
+title:  "Updating Call Arguments"
 date:   2016-11-10
 tags: [R, programming]
 ---
@@ -15,6 +15,7 @@ Group](http://www.meetup.com/DenverRUG/) in March of 2016.  You can get the
 [github](https://github.com/dewittpe) page.
 
 ```{r setup, include = FALSE}
+knitr::opts_knit$set(base.url = '/')
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 

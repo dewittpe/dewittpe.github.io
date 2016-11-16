@@ -1,5 +1,5 @@
 ---
-title:  "Updating Arguments Within A Call Within A Formula"
+title:  "Updating Call Arguments"
 date:   2016-11-10
 tags: [R, programming]
 ---
