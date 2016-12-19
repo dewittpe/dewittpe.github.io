@@ -4,36 +4,43 @@ date:   2016-12-19
 tags: [R, data summaries, qwraps2]
 ---
 
+```{r setup, include = FALSE}
+library(knitr)
+knitr::opts_knit$set(base.url = '/')
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
 Almost every biomedical research paper requires a "Table 1: baseline patient
 characteristics."  Many developers have published tools to help streamline the
 construction of such tables.  The `qwraps2::summary_table` function is my
 contribution to the toolbox.
 
-I have constructed hundreds of "Table 1"s while working as a biostatistics
-consultant in a biostatistics department.  I've also constructed many 'helper
-functions' to try and streamline the production of such tables.  However, every
+I have constructed hundreds of Table 1s while working as a biostatistics
+consultant in a biostatistics department.  I've also constructed many helper
+functions to try and streamline the production of such tables.  However, every
 project, every data set, every lead author, every target journal, etc., will
 present slightly different requirements for the contents and formating of the
-tables.  As such, functions which tried to "do it all" such as
-`qwraps::tableone`, an exported function from my defunct R package, required
-constant extension to provide the needed output from each nuanced project.
+tables.  As such, functions which tried to "do it all", required
+constant modification to provide the needed output from each nuanced project.
 
 The [`tableone`](https://CRAN.R-project.org/package=tableone) package does a lot
 of good things, and is a great tool for quickly building the baseline summary
-tables.  It reminds me a lot of `qwraps::tableone`.  What my experiences have
-taught me is that each row group, or even each row, might require some tweaks.
+tables.  What my experiences has taught me is that each row group, or even each
+row, might require some specific formating.  A function that treats all
+continuous variables one way and all categorical variables another way, may work
+for many cases but not all.
+
 The approach to building the tables I've taken now is explicitly define the
-summary statistic(s) I want for each variable in the data set, the formatting
-for the summary statistic(s), and in a way that is easy to work with one or more
+summary statistics I want for each variable in the data set, the formatting
+for the summary statistics, and in a way that is easy to work with one or more
 grouping variables.
 
-Quick side note: `qwraps2` is a package of 'quick wrappers' or helper functions
-I've found useful for formating results and generating some graphics.
-
-We'll use the `mtcars` dataset for our examples.  Let's report several summary
-statistics for miles per gallon, number of cylinders, and weight of the
-vehicles.  The following summary is provided to illustrate the functions and
-thus will include some summaries that would not be used in a publication.
+The function `summary_table` within my
+[`qwraps2`](https://CRAN.R-project.org/package=qwraps2) package is the tool I
+and a few colleagues have started to rely on for building baseline patient
+characteristic tables.  (qwraps2, "quick wraps 2", is a package of formatting
+functions I've found useful for formating results and generating some graphics
+when authoring .Rmd and .Rnw files.)
 
 Load and attach the qwraps2 namespace.  We'll set the `qwraps2_markup` option to
 `markdown`.  If this option is not set, `qwraps2` uses
@@ -44,7 +51,13 @@ library(qwraps2)
 options(qwraps2_markup = 'markdown') # default is latex
 ```
 
-The data summary we want will be 
+<br>
+
+We'll use the `mtcars` dataset for our examples.  Let's report several summary
+statistics for miles per gallon, number of cylinders, and weight of the
+vehicles.  The following summary is provided to illustrate the functions and
+thus will include some summaries that would not be used in a publication.  
+The data summary we want will be:
 
 * Miles Per Gallon
   * min
@@ -65,7 +78,7 @@ report such a summary, treating cylinders as both a continuous and categorical
 value.  However, doing so here helps to illustrate the flexibility of the
 `summary_table` method.
 
-Outlining the wanted summary statistics above as a list-of-lists will help
+Outlining the wanted summary statistics above as a list-of-lists helps to
 explain the construction of the summary object constructed below.  The
 `summary_table` method takes two arguments, 
 
@@ -101,7 +114,13 @@ mtcar_summaries <-
 
 
 The table is constructed and printed with ease:
-```{r, results = "asis"}
+```{r, results = "markup"}
+summary_table(mtcars, mtcar_summaries)
+```
+
+The markdown output, rendered as html is:
+
+```{r, echo = FALSE, results = "asis"}
 summary_table(mtcars, mtcar_summaries)
 ```
 
@@ -111,7 +130,10 @@ summary_table(mtcars, mtcar_summaries)
 Extending the table to show the same summary by a grouping variable, we'll use
 `am` (Transmission: 0 = automatic, 1 = manual), is done as follows:
 
-```{r, results = "asis"}
+```{r, results = "markup"}
+summary_table(dplyr::group_by(mtcars, am), mtcar_summaries)
+```
+```{r, echo = FALSE, results = "asis"}
 summary_table(dplyr::group_by(mtcars, am), mtcar_summaries)
 ```
 
@@ -119,16 +141,24 @@ summary_table(dplyr::group_by(mtcars, am), mtcar_summaries)
 
 And lastly, building one table with a column for the whole data set and columns
 for each transmission type is:
-```{r, results = 'asis'}
+```{r, results = "markup"}
+cbind(summary_table(mtcars, mtcar_summaries),
+      summary_table(dplyr::group_by(mtcars, am), mtcar_summaries))
+```
+```{r, echo = FALSE, results = "asis"}
 cbind(summary_table(mtcars, mtcar_summaries),
       summary_table(dplyr::group_by(mtcars, am), mtcar_summaries))
 ```
 
 <br>
 
-Using `dplry::group_by` will alow you to build the table with more than one
+Using `dplry::group_by` will allow you to build the table with more than one
 grouping variable.  For example:
-```{r, results = 'asis'}
+```{r, results = "markup"}
+cbind(summary_table(mtcars, mtcar_summaries),
+      summary_table(dplyr::group_by(mtcars, am, vs), mtcar_summaries))
+```
+```{r, echo = FALSE, results = "asis"}
 cbind(summary_table(mtcars, mtcar_summaries),
       summary_table(dplyr::group_by(mtcars, am, vs), mtcar_summaries))
 ```
@@ -137,12 +167,40 @@ cbind(summary_table(mtcars, mtcar_summaries),
 
 
 The formatting of the output is controlled by the
-`qwraps2:::print.qwraps2_summary_table` and `qwraps2::qable` functions.
+`qwraps2:::print.qwraps2_summary_table` and `qwraps2::qable` functions.  
 
-If you find bugs or have suggestions on how to extend and improve this tool
-please create an [issue on github](https://github.com/dewittpe/qwraps2/issues).
+```{r}
+args(qwraps2:::print.qwraps2_summary_table)
+args(qwraps2::qable)
+```
 
+The `print` method for `qwraps2_summary_table` objects calls `qable` which is a
+wrapper around `knitr::kable`.  The row groups,` rgroup`, row names `rnames`,
+and column names, `cnames`, are explicitly set in the
+`print.qwraps2_summary_table` method.  The `...` passes additional arguments to
+`qwraps2::qable` which can then continue to pass to `knitr::kable`.
 
+A quick example of modifying a table:
+```{r, results = "markup"}
+by_am <- summary_table(dplyr::group_by(mtcars, am), mtcar_summaries)
 
+print(by_am, 
+      cnames = c("_Manual_", "_Automatic_"),
+      rtitle = "Vehicle Characteristics", 
+      align = "lcc")
+```
 
+```{r, echo = FALSE, results = "asis"}
+print(by_am, 
+      cnames = c("_Manual_", "_Automatic_"),
+      rtitle = "Vehicle Characteristics", 
+      align = "lcc")
+```
+
+<br>
+
+I hope that some readers will find this approach to building summary tables to
+be useful.  If you find bugs or have suggestions on how to extend and improve
+this tool please create an
+[issue on github](https://github.com/dewittpe/qwraps2/issues).
 
