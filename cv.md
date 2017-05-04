@@ -25,7 +25,9 @@ title: Curriculum Vitae for Peter E. DeWitt
 #### Ph.D. Biostatistics
 <details>
 <ul>
-<li> expected Spring 2017 </li>
+<li> Title: Parsimonious B-Spline Regression Models via Control Polygon and Control Net Reduction for Identifying Factors Explaining Variation in Daily Hormone Profiles During the Menopausal Transition </li>
+<li> Co-advisors: Nichole Carlson and Samantha MaWhinney
+<li> May 2017 </li>
 <li> University of Colorado Anschutz Medical Campus, Aurora, Colorado </li>
 </ul>
 </details>
@@ -143,6 +145,15 @@ title: Curriculum Vitae for Peter E. DeWitt
 
 [back to top](#top)
 
+#### 2017 Strother Walker Award
+<details>
+<ul>
+<li> Awarded for "outstanding work on your dissertatin, and your many contributions to computational work being done by your fellow classmates." </li>
+<li> Awarded by the Department of Biostatistics and Informatics, University of
+Colorado Anschutz Medical Campus </li>
+</ul>
+</details>
+
 #### Best Student Oral Presentation, 28th International Biometric Conference
 <details>
 <ul>
@@ -181,9 +192,20 @@ title: Curriculum Vitae for Peter E. DeWitt
 
 [back to top](#top)
 
+#### HealthInf 2017
+<details>
+<ul>
+<li> Presented a paper: ["Collaborative Reproducible
+Reporting: Git Submodules as a Data Security Solution"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CBv7wlQAAAAJ&sortby=pubdate&citation_for_view=CBv7wlQAAAAJ:HDshCWvjkbEC)</li>
+<li> February 2017 </li>
+<li> Porto, Portugal </li>
+</ul>
+</details>
+
 #### 28th International Biometric Conference
 <details>
 <ul>
+<li> Presented a paper: "Parsimonious B-Spline Regression Models via Control Polygon Reduction" </li>
 <li> July 2016 </li>
 <li> Hosted by the [International Biometric Society](http://www.biometricsociety.org/) </li>
 <li> Victoria, British Columbia, Canada </li>
@@ -193,6 +215,7 @@ title: Curriculum Vitae for Peter E. DeWitt
 #### WNAR Annual Meeting 2016
 <details>
 <ul>
+<li> Presented a paper: "Parsimonious B-Spline Regression Models via Control Polygon Reduction" </li>
 <li> July 2016 </li>
 <li> Concurrent with 28th International Biometric Conference </li>
 <li> Victoria, British Columbia, Canada </li>
