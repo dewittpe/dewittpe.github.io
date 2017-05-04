@@ -195,7 +195,8 @@ Colorado Anschutz Medical Campus </li>
 #### HealthInf 2017
 <details>
 <ul>
-<li> Presented a paper: ["Collaborative Reproducible Reporting: Git Submodules as a Data Security Solution"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CBv7wlQAAAAJ&sortby=pubdate&citation_for_view=CBv7wlQAAAAJ:HDshCWvjkbEC)</li>
+<li> Presented a paper: <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CBv7wlQAAAAJ&sortby=pubdate&citation_for_view=CBv7wlQAAAAJ:HDshCWvjkbEC" target="_blank">
+"Collaborative Reproducible Reporting: Git Submodules as a Data Security Solution"</a></li>
 <li> February 2017 </li>
 <li> Porto, Portugal </li>
 </ul>
