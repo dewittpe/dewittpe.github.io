@@ -26,7 +26,7 @@ title: Curriculum Vitae for Peter E. DeWitt
 <details>
 <ul>
 <li> Title: Parsimonious B-Spline Regression Models via Control Polygon and Control Net Reduction for Identifying Factors Explaining Variation in Daily Hormone Profiles During the Menopausal Transition </li>
-<li> Co-advisors: Nichole Carlson and Samantha MaWhinney
+<li> Co-advisors: Nichole Carlson and Samantha MaWhinney </li>
 <li> May 2017 </li>
 <li> University of Colorado Anschutz Medical Campus, Aurora, Colorado </li>
 </ul>
@@ -195,8 +195,7 @@ Colorado Anschutz Medical Campus </li>
 #### HealthInf 2017
 <details>
 <ul>
-<li> Presented a paper: ["Collaborative Reproducible
-Reporting: Git Submodules as a Data Security Solution"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CBv7wlQAAAAJ&sortby=pubdate&citation_for_view=CBv7wlQAAAAJ:HDshCWvjkbEC)</li>
+<li> Presented a paper: ["Collaborative Reproducible Reporting: Git Submodules as a Data Security Solution"](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=CBv7wlQAAAAJ&sortby=pubdate&citation_for_view=CBv7wlQAAAAJ:HDshCWvjkbEC)</li>
 <li> February 2017 </li>
 <li> Porto, Portugal </li>
 </ul>
