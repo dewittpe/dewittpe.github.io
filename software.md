@@ -11,9 +11,11 @@ available on [github](https://github.com/dewittpe).  Here are the highlights:
 ----
 *Table of Contents*
 
-* [cpr](#cpr)
-* [qwraps2](#qwraps2)
-* [sccm](#sccm)
+* R Packages:
+  * [cpr](#cpr): Control Polygon Reduction
+  * [pccc](#pccc): Pediatric Complex Chronic Conditions: An R Package
+  * [qwraps2](#qwraps2): Quick Wraps 2
+  * [sccm](#sccm): Schwarz-Christoffel Conformal Mapping 
 
 ----
 
@@ -36,6 +38,33 @@ regression models.  The cpr package provides methods for working with B-splines,
 control polygons, and running the CPR algorithm.  Extension to control nets, and
 the control net reduction (CNR) algorithm for multi-variable B-spline models is
 also part of this package.
+
+----
+# <a name="pccc"></a>pccc: Pediatric Complex Chronic Conditions: An R Package
+
+[back to top](#top)
+
+<a href="https://www.github.com/CUD2V/pccc" title="pccc on GitHub" target="_blank">
+  <i class="fa fa-github fa-2x"></i>
+  <span class="label">pccc on GitHub</span>
+</a>
+
+I started th [pccc](https://github.com/CUD2V/pccc) R package as a side project
+while finishing up my Ph.D.  When I graduated, others took the work and
+published the package.
+
+Pediatric Complex Chronic Conditions (CCC) system was published "Pediatric
+complex chronic conditions classification system version 2: updated for ICD-10
+and complex medical technology dependence and transplantation" by Chris
+Feudtner, James A Feinstein, Wenjun Zhong, Matt Hall and Dingwei Dai.
+
+SAS and STATA scripts to generate CCC categories from ICD codes were provided by
+Feudtner et al. as an appendix to the above manuscript. However, those scripts
+can take many hours to run on large datasets.
+
+This package provides R functions to generate the CCC categories. Because the R
+functions are built with a C++ back-end, they are very computationally
+efficient.
 
 ----
 
