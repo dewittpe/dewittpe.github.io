@@ -1,7 +1,7 @@
 ---
 title: Software Packages
 permalink: /software/
-layout: post
+layout: page
 ---
 
 <a name="top"></a>
