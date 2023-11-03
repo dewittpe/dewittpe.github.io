@@ -48,4 +48,4 @@ plugins:
   - jekyll-remote-theme
   - jekyll-include-cache
 
-exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'screenshot.png', 'makefile']
