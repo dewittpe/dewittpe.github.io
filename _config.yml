@@ -1,20 +1,22 @@
 # Site settings
-title: 'Demo for jekyll-remote-theme with theme jekyll-uno'
-description: 'Jekyll-Uno - a minimal, responsive theme for Jekyll - used via jekyll-remote-theme'
-url: ''
-baseurl: '/jekyll-uno-remote-theme-demo'
-# google_analytics: 'UA-XXXXXX-X'
+title: Peter E. DeWitt, Ph.D.
+description: 'Biostatistician'
+url: 'dewittpe.github.io'
+baseurl: '/'
+google_analytics: 'UA-87261307-1'
 # disqus_shortname: 'your-disqus-name'
 
-remote_theme: matthiaslischka/jekyll-uno
+remote_theme: dewittpe/jekyll-uno
 
 author:
-  name: 'Matthias Lischka'
-  #email: 
-  #twitter_username: 
-  #facebook_username: 
-  github_username: matthiaslischka
-  #linkedin_username:  
+  name: 'Peter DeWitt'
+  email: dewittpe@gmail.com
+  twitter_username: Statistics4All
+  facebook_username:
+  github_username:  dewittpe
+  linkedin_username:
+  researchgate_username: Peter_DeWitt
+  google_scholar: CBv7wlQAAAAJ&hl=en
 
 defaults:
   -
@@ -27,7 +29,7 @@ defaults:
 # Build settings
 destination: _site
 paginate: 10
-permalink: /:year/:title/
+permalink: /:year/:month/:day/:title/
 markdown: kramdown
 highlighter: rouge
 
@@ -45,5 +47,5 @@ plugins:
   - jekyll-paginate
   - jekyll-remote-theme
   - jekyll-include-cache
-  
+
 exclude: ['README.md', 'Gemfile', 'Gemfile.lock', '.travis.yml', 'vendor']
