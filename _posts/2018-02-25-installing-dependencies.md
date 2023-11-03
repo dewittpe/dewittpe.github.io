@@ -1,6 +1,7 @@
 ---
 title:  "Installing Package Dependencies without external http(s) requests"
 date:   2018-02-25
+layout: post
 tags: [R, programming, package development]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title:  "git diff pdfs"
 date:   2017-04-03 00:00:00
+layout: post
 tags: [git]
 ---
 

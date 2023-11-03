@@ -1,6 +1,7 @@
 ---
 title:  "Ph.D. Dissertation Defended"
 date:   2017-04-10 11:30:00
+layout: post
 tags: [phd]
 ---
 

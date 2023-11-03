@@ -1,6 +1,7 @@
 ---
 title:  "(lazy)Loading Cached Chunks into an Interactive R Session"
 date:   2017-01-03
+layout: post
 tags: [R, knitr, cache, qwraps2]
 ---
 

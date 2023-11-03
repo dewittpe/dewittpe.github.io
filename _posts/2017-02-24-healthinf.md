@@ -1,6 +1,7 @@
 ---
 title:  "10th International Conference on Health Informatics"
 date:   2017-02-24 12:00:00
+layout: post
 tags: [abstract, conferences]
 ---
 

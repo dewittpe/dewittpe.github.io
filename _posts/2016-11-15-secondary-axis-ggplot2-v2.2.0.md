@@ -1,6 +1,7 @@
 ---
 title:  "Secondary Axis in ggplot2 v2.2.0"
 date:   2016-11-15
+layout: post
 tags: [R, programming, ggplot2, phd]
 ---
 

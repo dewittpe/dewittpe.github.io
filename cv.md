@@ -1,7 +1,7 @@
 ---
-layout: page
-permalink: /cv/
 title: Curriculum Vitae for Peter E. DeWitt, Ph.D.
+permalink: /cv/
+layout: post
 ---
 
 <a name="top"></a> *Table of Contents:*

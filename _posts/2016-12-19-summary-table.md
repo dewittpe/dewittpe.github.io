@@ -1,6 +1,7 @@
 ---
 title:  "Baseline Characteristics Tables with qwraps2"
 date:   2016-12-19
+layout: post
 tags: [R, data summaries, qwraps2]
 ---
 

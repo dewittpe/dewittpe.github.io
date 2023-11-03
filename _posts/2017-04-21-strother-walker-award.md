@@ -1,6 +1,7 @@
 ---
 title:  "Strother Walker Award"
 date:   2017-04-21 18:00:00
+layout: post
 tags: [awards]
 ---
 

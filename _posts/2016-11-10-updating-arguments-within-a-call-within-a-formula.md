@@ -1,6 +1,7 @@
 ---
 title:  "Updating Call Arguments"
 date:   2016-11-10
+layout: post
 tags: [R, programming]
 ---
 

@@ -1,7 +1,7 @@
 ---
-layout: page
-permalink: /software/
 title: Software Packages
+permalink: /software/
+layout: post
 ---
 
 <a name="top"></a>
