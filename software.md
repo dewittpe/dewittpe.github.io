@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: software.html
+permalink: /software/
 title: Software Packages
 ---
 
