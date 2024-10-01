@@ -1,0 +1,47 @@
+---
+title: "About"
+image: dewittpe_headshot_20240828.jpg
+about:
+  template: trestles
+  links:
+    - icon: twitter-x
+      href: https://x.com/Statistics4All
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/peter-dewitt/
+    - icon: github
+      text: Github
+      href: https://github.com/dewittpe
+    - icon: researchgate
+      text: ResearchGate
+      href: https://www.researchgate.net/profile/Peter-Dewitt
+    - icon: google_scholar
+      text: GoogleScholar
+      href: https://scholar.google.com/citations?user=CBv7wlQAAAAJ&hl=en
+    - text: National Library of Medicine
+      href: https://www.ncbi.nlm.nih.gov/myncbi/peter.dewitt.1/bibliography/public/
+
+---
+
+## Education
+
+* __Ph.D.__
+  - 2017
+  - Biostatistics
+  - Colorado School of Public Health
+  - University of Colorado Anschutz Medical Campus
+
+* __M.S.__ 
+  - 2010
+  - Statistics
+  - Colorado State University
+
+* __M.S.__
+  - 2007
+  - Mathematics and Computer Science
+  - Colorado School of Mines
+
+* __B.S.__
+  - Mathematics and Computer Science
+  - 2005
+  - Colorado School of Mines

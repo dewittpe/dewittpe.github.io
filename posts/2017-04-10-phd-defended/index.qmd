@@ -1,0 +1,22 @@
+---
+title:  "Ph.D. Dissertation Defended"
+date:   2017-04-10 11:30:00
+date-modified: 2024-10-01
+categories: [phd, news, cpr]
+---
+
+I have successfully defended my Ph.D. dissertation: ["Parsimonious B-Spline
+Regression Models via Control Polygon and Control Net Reduction for Identifying
+Factors Explaining Variation in Daily Hormone Profiles During The Menopausal
+Transition."](https://doi.org/10.25677/awnc-b795)
+
+Only minor edits to make to the dissertation itself.  Several publications are
+forthcoming.  You can get more info on the control polygon and control net
+reduction methods from the R package cpr available on
+<a href="https://cran.r-project.org/package=cpr" target="_blank"> CRAN </a>,
+<a href="https://github.com/dewittpe/cpr" target="_blank"> github</a>.
+
+
+_update: 2024-10-01_
+A website for the cpr package can be found [here](https://peteredewitt.com/cpr).
+

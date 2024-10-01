@@ -1,0 +1,12 @@
+---
+title: "Site Rebuild"
+author: "Peter E. DeWitt"
+date: "2024-10-01"
+categories: [news]
+---
+
+Rebuilding the site
+
+I have let the landing page and blog section of peteredewitt.com languish for
+years.  It is about time that I rebuild this.  I'm working on moving away from
+Jekyll and to a [quarto](https://quarto.org/) based workflow.
