@@ -1,17 +1,73 @@
 [
   {
-    "objectID": "blogroll.html",
-    "href": "blogroll.html",
-    "title": "Blog Roll",
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Software",
     "section": "",
-    "text": "R-Bloggers\nRStudio Blog\nThe International Biometric Society\nDepartment of Biomedical Informatics Newsroom"
+    "text": "I have developed and published several R packages and tools.\nListed here in alphabetical order. Click the link to get a summary of the tool and links to the software and more details."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Peter E. DeWitt, Ph.D.",
+    "objectID": "software.html#phoenix",
+    "href": "software.html#phoenix",
+    "title": "Software",
+    "section": "phoenix",
+    "text": "phoenix\n     \nThe phoenix R package and Python module implement the Phoenix criteria for pediatric sepsis and septic shock.\n\nwebsite\nR package\nPython module\ngithub\nPeer reviewed manuscript in JAMIA Open:\n\nphoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria"
+  },
+  {
+    "objectID": "software.html#pedbp",
+    "href": "software.html#pedbp",
+    "title": "Software",
+    "section": "pedbp",
+    "text": "pedbp\n     \nData and utilities for estimating pediatric blood pressure percentiles by sex, age, and optionally height (stature) as described in Martin et.al. (2022). Blood pressure percentiles for children under one year of age come from Gemelli et.al. (1990). Estimates of blood pressure percentiles for children at least one year of age are informed by data from the National Heart, Lung, and Blood Institute (NHLBI) and the Centers for Disease Control and Prevention (CDC) or from Lo et.al. (2013). The flowchart for selecting the informing data source comes from Martin et.al. (2022).\n\nwebsite\nShiny app\nR package\ngithub\nPeer reviewed manuscript in JAMA Network Open:\n\nDevelopment of a Pediatric Blood Pressure Percentile Tool for Clinical Decision Support"
+  },
+  {
+    "objectID": "software.html#redcapexporter",
+    "href": "software.html#redcapexporter",
+    "title": "Software",
+    "section": "REDCapExporter",
+    "text": "REDCapExporter"
+  },
+  {
+    "objectID": "software.html#cpr",
+    "href": "software.html#cpr",
+    "title": "Software",
+    "section": "cpr",
+    "text": "cpr"
+  },
+  {
+    "objectID": "software.html#pccc",
+    "href": "software.html#pccc",
+    "title": "Software",
+    "section": "pccc",
+    "text": "pccc"
+  },
+  {
+    "objectID": "software.html#qwraps2",
+    "href": "software.html#qwraps2",
+    "title": "Software",
+    "section": "qwraps2",
+    "text": "qwraps2"
+  },
+  {
+    "objectID": "software.html#ensr",
+    "href": "software.html#ensr",
+    "title": "Software",
+    "section": "ensr",
+    "text": "ensr"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
     "section": "",
-    "text": "Site Rebuild\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\nPeter E. DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nA New Era For Diagnosis and Research in Pediatric Sepsis\n\n\n\n\n\n\nnews\n\n\npublications\n\n\nsepsis\n\n\n\n\n\n\n\n\n\nJan 21, 2024\n\n\nPeter E. DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling Package Dependencies without external http(s) requests\n\n\n\n\n\n\nR\n\n\nprogramming\n\n\npackage development\n\n\n\n\n\n\n\n\n\nFeb 25, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nStrother Walker Award\n\n\n\n\n\n\nawards\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 21, 2017\n\n\nPeter DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nPh.D. Dissertation Defended\n\n\n\n\n\n\nphd\n\n\nnews\n\n\ncpr\n\n\n\n\n\n\n\n\n\nApr 10, 2017\n\n\n\n\n\n\n\n\n\n\n\n\ngit diff pdfs\n\n\n\n\n\n\ngit\n\n\n\n\n\n\n\n\n\nApr 3, 2017\n\n\nPeter DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\n10th International Conference on Health Informatics\n\n\n\n\n\n\nnews\n\n\nabstract\n\n\nconferences\n\n\n\n\n\n\n\n\n\nFeb 24, 2017\n\n\n\n\n\n\n\n\n\n\n\n\n(lazy)Loading Cached Chunks into an Interactive R Session\n\n\n\n\n\n\nR\n\n\nknitr\n\n\ncache\n\n\nqwraps2\n\n\n\n\n\n\n\n\n\nJan 3, 2017\n\n\nPeter DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nBaseline Characteristics Tables with qwraps2\n\n\n\n\n\n\nR\n\n\ndata summaries\n\n\nqwraps2\n\n\n\n\n\n\n\n\n\nDec 19, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nSecondary Axis in ggplot2 v2.2.0\n\n\n\n\n\n\nR\n\n\nprogramming\n\n\nggplot2\n\n\nphd\n\n\n\n\n\n\n\n\n\nNov 15, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nUpdating Call Arguments\n\n\n\n\n\n\nR\n\n\nprogramming\n\n\n\n\n\n\n\n\n\nNov 10, 2016\n\n\n\n\n\n\n\n\n\n\n\n\ndewittpe.github.io Set up\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 26, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nThe 28th International Biometric Conference\n\n\nBest Student Oral Presentation\n\n\n\nabstract\n\n\nconferences\n\n\nawards\n\n\ncpr\n\n\nphd\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 16, 2016\n\n\nPeter E. DeWitt\n\n\n\n\n\n\nNo matching items"
+    "text": "Professionally I am an Assistant Research Professor in the Department of Biomedical Informatics, in the School of Medicine at the University of Colorado Anschutz Medical Campus. I work as a biostatistician, data scientist, software developer, and mentor.\nPersonally I am a Dad and woodworker."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\n\nPh.D.\n\n2017\nBiostatistics\nColorado School of Public Health\nUniversity of Colorado Anschutz Medical Campus\n\nM.S.\n\n2010\nStatistics\nColorado State University\n\nM.S.\n\n2007\nMathematics and Computer Science\nColorado School of Mines\n\nB.S.\n\nMathematics and Computer Science\n2005\nColorado School of Mines"
   },
   {
     "objectID": "posts/2017-04-03-git-diff-pdfinfo/index.html",
@@ -82,6 +138,48 @@
     "title": "dewittpe.github.io Set up",
     "section": "",
     "text": "I’ve spent the last several hours of yesterday this early morning putting the initial dewittpe.github.io page together. I hope you, the wandering web surfer, or the unfortunately sentient web spider, enjoy what you have found."
+  },
+  {
+    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html",
+    "href": "posts/2024-01-21-phoenix-sepsis/index.html",
+    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
+    "section": "",
+    "text": "Two major publications in the Journal of the American Medical Association (JAMA) have been released International Consensus Criteria for Pediatric Sepsis and Septic Shock and Development and Validation of the Phoenix Criteria for Pediatric Sepsis and Septic Shock detailing the efforts of an international team of researchers to modernize and improve on the diagnostic criteria for pediatric sepsis. I am fortunate to have been part of this team and co-second author on the “Development” manuscript, and co-author on the consensus manuscript.\nThese publications report on the development and consensus for the Phoenix Sepsis Score as the new diagnostic criteria for pediatric sepsis and septic shock. The publication coincides with the criteria being presented at the 2024 Critical Care Congress of the Society for Critical Care Medicine (SCCM)\nThe Phoenix criteria will be utilized for diagnosing pediatric sepsis and septic shock in children all over the world."
+  },
+  {
+    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#the-big-picture",
+    "href": "posts/2024-01-21-phoenix-sepsis/index.html#the-big-picture",
+    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
+    "section": "The big picture",
+    "text": "The big picture\nGlobally, pediatric sepsis is responsible for an estimated 3.3 million deaths per year.\nPrior to 2016, the diagnostic criteria for both adult and pediatric sepsis was based on an inflammatory response. That criteria had low sensitivity and was difficult to implement across differently resourced medical facilities. In 2016 the diagnostic criteria for adult sepsis was redefined based on life-threatening organ dysfunction. The publication of the Phoenix criteria in 2024 brings the diagnostic criteria for pediatric sepsis in-line with the adult sepsis definition as both are now based on life-threatening organ dysfunction. Additionally, the Phoenix criteria was developed to be useful in high- and low-resourced environments, that is, the criteria is applicable across the globe, in major metropolitan area research hospitals and rural medical clinics."
+  },
+  {
+    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#how-was-the-phoenix-criteria-developed",
+    "href": "posts/2024-01-21-phoenix-sepsis/index.html#how-was-the-phoenix-criteria-developed",
+    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
+    "section": "How was the Phoenix Criteria Developed",
+    "text": "How was the Phoenix Criteria Developed\nData from hospital systems in North America, Asia, Africa, and South America, were collected and harmonized into one analysis set of more than 3 million patient encounters. A data-informed Delphi process was used to identify the most useful existing organ dysfunction scoring systems. The term “useful” means that the scoring system preformed well in estimating risk of death in statistical models, but was a reasonable scoring system to use world-wide. For example, a score that considers a specific and expensive laboratory test would not be considered useful since it is unlikely to be available in middle- or low- resourced environments, even if that test was extremely good at predicating mortality in statistical models.\nAfter a set of useful organ dysfunction scores were identified, stacked regression methods were used to test different combinations of the scores for predicting mortality. Finally, a set of organ dysfunction scores were selected by the Delphi-process and the Phoenix Criteria was established."
+  },
+  {
+    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#the-phoenix-criteria",
+    "href": "posts/2024-01-21-phoenix-sepsis/index.html#the-phoenix-criteria",
+    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
+    "section": "The Phoenix Criteria",
+    "text": "The Phoenix Criteria\nThe reader is encouraged to reference the published papers for all the details.\nThe Phoenix criteria is based on dysfunction in four organ systems\n\nrespiratory,\ncardiovascular,\ncoagulation, and\nneurologic.\n\nPoints are given based on the level of dysfunction in each of the systems. 0-3 points for respiratory, 0-6 points for cardiovascular, 0-2 points for coagulation, and 0-2 points for neurologic. A total score of 2 or more points is the diagnostic criteria for sepsis, and a total score of 2 or more points with at least one point in the cardiovascular system is the diagnostic criteria for septic shock.\nNote: An extended scoring system using eight organ systems, the four listed above along with endocrine, immunologic, renal, and hepatic, has been published too."
+  },
+  {
+    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#links-to-the-manuscripts",
+    "href": "posts/2024-01-21-phoenix-sepsis/index.html#links-to-the-manuscripts",
+    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
+    "section": "Links to the Manuscripts:",
+    "text": "Links to the Manuscripts:\n\nInternational Consensus Criteria for Pediatric Sepsis and Septic Shock\nDevelopment and Validation of the Phoenix Criteria for Pediatric Sepsis and Septic Shock"
+  },
+  {
+    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#other-links-and-news-posts-about-this-work",
+    "href": "posts/2024-01-21-phoenix-sepsis/index.html#other-links-and-news-posts-about-this-work",
+    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
+    "section": "Other links and news posts about this work:",
+    "text": "Other links and news posts about this work:\n\nCU Researchers Unveil Modernized Criteria For Pediatric Sepsis and Septic Shock\nYouTube video of the presentation to SCCM: Announcement of the Novel Phoenix Pediatric Sepsis Criteria\nR package, Python Module, and SQL for applying the Phoenix criteria to data sets:\n\nJAMIA Open\nphoenix R package"
   },
   {
     "objectID": "posts/2017-04-10-phd-defended/index.html",
@@ -182,122 +280,17 @@
     "text": "The faculty of the Department of Biostatistics and Informatics has awarded me the 2017 Strother Walker Award based on outstanding work on your dissertation, and your many contributions to computational work being done by your fellow classmates.\nStrother H. Walker award. This is given to an outstanding PhD Biostatistics student who has completed the first year and passed the first written Qualifying exam at the PhD level. Preference is given to students who have passed the second written Qualifying exam. It is partially a cash award funded from the interest on a trust set up by Dorothy Walker in honor of Professor Strother Walker, the former chair of the Department of Biometrics."
   },
   {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Software",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Peter E. DeWitt, Ph.D.",
     "section": "",
-    "text": "I have developed and published several R packages and tools."
+    "text": "Site Rebuild\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 1, 2024\n\n\nPeter E. DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nA New Era For Diagnosis and Research in Pediatric Sepsis\n\n\n\n\n\n\nnews\n\n\npublications\n\n\nsepsis\n\n\n\n\n\n\n\n\n\nJan 21, 2024\n\n\nPeter E. DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nInstalling Package Dependencies without external http(s) requests\n\n\n\n\n\n\nR\n\n\nprogramming\n\n\npackage development\n\n\n\n\n\n\n\n\n\nFeb 25, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nStrother Walker Award\n\n\n\n\n\n\nawards\n\n\nnews\n\n\n\n\n\n\n\n\n\nApr 21, 2017\n\n\nPeter DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nPh.D. Dissertation Defended\n\n\n\n\n\n\nphd\n\n\nnews\n\n\ncpr\n\n\n\n\n\n\n\n\n\nApr 10, 2017\n\n\n\n\n\n\n\n\n\n\n\n\ngit diff pdfs\n\n\n\n\n\n\ngit\n\n\n\n\n\n\n\n\n\nApr 3, 2017\n\n\nPeter DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\n10th International Conference on Health Informatics\n\n\n\n\n\n\nnews\n\n\nabstract\n\n\nconferences\n\n\n\n\n\n\n\n\n\nFeb 24, 2017\n\n\n\n\n\n\n\n\n\n\n\n\n(lazy)Loading Cached Chunks into an Interactive R Session\n\n\n\n\n\n\nR\n\n\nknitr\n\n\ncache\n\n\nqwraps2\n\n\n\n\n\n\n\n\n\nJan 3, 2017\n\n\nPeter DeWitt\n\n\n\n\n\n\n\n\n\n\n\n\nBaseline Characteristics Tables with qwraps2\n\n\n\n\n\n\nR\n\n\ndata summaries\n\n\nqwraps2\n\n\n\n\n\n\n\n\n\nDec 19, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nSecondary Axis in ggplot2 v2.2.0\n\n\n\n\n\n\nR\n\n\nprogramming\n\n\nggplot2\n\n\nphd\n\n\n\n\n\n\n\n\n\nNov 15, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nUpdating Call Arguments\n\n\n\n\n\n\nR\n\n\nprogramming\n\n\n\n\n\n\n\n\n\nNov 10, 2016\n\n\n\n\n\n\n\n\n\n\n\n\ndewittpe.github.io Set up\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nOct 26, 2016\n\n\n\n\n\n\n\n\n\n\n\n\nThe 28th International Biometric Conference\n\n\nBest Student Oral Presentation\n\n\n\nabstract\n\n\nconferences\n\n\nawards\n\n\ncpr\n\n\nphd\n\n\nnews\n\n\n\n\n\n\n\n\n\nJul 16, 2016\n\n\nPeter E. DeWitt\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "blogroll.html",
+    "href": "blogroll.html",
+    "title": "Blog Roll",
     "section": "",
-    "text": "Professionally I am an Assistant Research Professor in the Department of Biomedical Informatics, in the School of Medicine at the University of Colorado Anschutz Medical Campus. I work as a biostatistician, data scientist, software developer, and mentor.\nPersonally I am a Dad and woodworker."
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\n\nPh.D.\n\n2017\nBiostatistics\nColorado School of Public Health\nUniversity of Colorado Anschutz Medical Campus\n\nM.S.\n\n2010\nStatistics\nColorado State University\n\nM.S.\n\n2007\nMathematics and Computer Science\nColorado School of Mines\n\nB.S.\n\nMathematics and Computer Science\n2005\nColorado School of Mines"
-  },
-  {
-    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html",
-    "href": "posts/2024-01-21-phoenix-sepsis/index.html",
-    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
-    "section": "",
-    "text": "Two major publications in the Journal of the American Medical Association (JAMA) have been released International Consensus Criteria for Pediatric Sepsis and Septic Shock and Development and Validation of the Phoenix Criteria for Pediatric Sepsis and Septic Shock detailing the efforts of an international team of researchers to modernize and improve on the diagnostic criteria for pediatric sepsis. I am fortunate to have been part of this team and co-second author on the “Development” manuscript, and co-author on the consensus manuscript.\nThese publications report on the development and consensus for the Phoenix Sepsis Score as the new diagnostic criteria for pediatric sepsis and septic shock. The publication coincides with the criteria being presented at the 2024 Critical Care Congress of the Society for Critical Care Medicine (SCCM)\nThe Phoenix criteria will be utilized for diagnosing pediatric sepsis and septic shock in children all over the world."
-  },
-  {
-    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#other-links-and-news-posts-about-this-work",
-    "href": "posts/2024-01-21-phoenix-sepsis/index.html#other-links-and-news-posts-about-this-work",
-    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
-    "section": "Other links and news posts about this work:",
-    "text": "Other links and news posts about this work:\n\nCU Researchers Unveil Modernized Criteria For Pediatric Sepsis and Septic Shock\nYouTube video of the presentation to SCCM: Announcement of the Novel Phoenix Pediatric Sepsis Criteria\nR package, Python Module, and SQL for applying the Phoenix criteria to data sets:\n\nJAMIA Open\nphoenix R package"
-  },
-  {
-    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#links-to-the-manuscripts",
-    "href": "posts/2024-01-21-phoenix-sepsis/index.html#links-to-the-manuscripts",
-    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
-    "section": "Links to the Manuscripts:",
-    "text": "Links to the Manuscripts:\n\nInternational Consensus Criteria for Pediatric Sepsis and Septic Shock\nDevelopment and Validation of the Phoenix Criteria for Pediatric Sepsis and Septic Shock"
-  },
-  {
-    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#the-big-picture",
-    "href": "posts/2024-01-21-phoenix-sepsis/index.html#the-big-picture",
-    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
-    "section": "The big picture",
-    "text": "The big picture\nGlobally, pediatric sepsis is responsible for an estimated 3.3 million deaths per year.\nPrior to 2016, the diagnostic criteria for both adult and pediatric sepsis was based on an inflammatory response. That criteria had low sensitivity and was difficult to implement across differently resourced medical facilities. In 2016 the diagnostic criteria for adult sepsis was redefined based on life-threatening organ dysfunction. The publication of the Phoenix criteria in 2024 brings the diagnostic criteria for pediatric sepsis in-line with the adult sepsis definition as both are now based on life-threatening organ dysfunction. Additionally, the Phoenix criteria was developed to be useful in high- and low-resourced environments, that is, the criteria is applicable across the globe, in major metropolitan area research hospitals and rural medical clinics."
-  },
-  {
-    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#how-was-the-phoenix-criteria-developed",
-    "href": "posts/2024-01-21-phoenix-sepsis/index.html#how-was-the-phoenix-criteria-developed",
-    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
-    "section": "How was the Phoenix Criteria Developed",
-    "text": "How was the Phoenix Criteria Developed\nData from hospital systems in North America, Asia, Africa, and South America, were collected and harmonized into one analysis set of more than 3 million patient encounters. A data-informed Delphi process was used to identify the most useful existing organ dysfunction scoring systems. The term “useful” means that the scoring system preformed well in estimating risk of death in statistical models, but was a reasonable scoring system to use world-wide. For example, a score that considers a specific and expensive laboratory test would not be considered useful since it is unlikely to be available in middle- or low- resourced environments, even if that test was extremely good at predicating mortality in statistical models.\nAfter a set of useful organ dysfunction scores were identified, stacked regression methods were used to test different combinations of the scores for predicting mortality. Finally, a set of organ dysfunction scores were selected by the Delphi-process and the Phoenix Criteria was established."
-  },
-  {
-    "objectID": "posts/2024-01-21-phoenix-sepsis/index.html#the-phoenix-criteria",
-    "href": "posts/2024-01-21-phoenix-sepsis/index.html#the-phoenix-criteria",
-    "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
-    "section": "The Phoenix Criteria",
-    "text": "The Phoenix Criteria\nThe reader is encouraged to reference the published papers for all the details.\nThe Phoenix criteria is based on dysfunction in four organ systems\n\nrespiratory,\ncardiovascular,\ncoagulation, and\nneurologic.\n\nPoints are given based on the level of dysfunction in each of the systems. 0-3 points for respiratory, 0-6 points for cardiovascular, 0-2 points for coagulation, and 0-2 points for neurologic. A total score of 2 or more points is the diagnostic criteria for sepsis, and a total score of 2 or more points with at least one point in the cardiovascular system is the diagnostic criteria for septic shock.\nNote: An extended scoring system using eight organ systems, the four listed above along with endocrine, immunologic, renal, and hepatic, has been published too."
-  },
-  {
-    "objectID": "software.html#education",
-    "href": "software.html#education",
-    "title": "About",
-    "section": "Education",
-    "text": "Education\n\nPh.D.\n\n2017\nBiostatistics\nColorado School of Public Health\nUniversity of Colorado Anschutz Medical Campus\n\nM.S.\n\n2010\nStatistics\nColorado State University\n\nM.S.\n\n2007\nMathematics and Computer Science\nColorado School of Mines\n\nB.S.\n\nMathematics and Computer Science\n2005\nColorado School of Mines"
-  },
-  {
-    "objectID": "software.html#phoenix",
-    "href": "software.html#phoenix",
-    "title": "Software",
-    "section": "phoenix",
-    "text": "phoenix\nThe phoenix R package and Python module implement the Phoenix criteria for pediatric sepsis and septic shock.\n\nwebsite\nR package\nPython module\nPeer reviewed manuscript in JAMIA Open:\n\nphoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria"
-  },
-  {
-    "objectID": "software.html#pedbp",
-    "href": "software.html#pedbp",
-    "title": "Software",
-    "section": "pedbp",
-    "text": "pedbp\nData and utilities for estimating pediatric blood pressure percentiles by sex, age, and optionally height (stature) as described in Martin et.al. (2022). Blood pressure percentiles for children under one year of age come from Gemelli et.al. (1990). Estimates of blood pressure percentiles for children at least one year of age are informed by data from the National Heart, Lung, and Blood Institute (NHLBI) and the Centers for Disease Control and Prevention (CDC) or from Lo et.al. (2013). The flowchart for selecting the informing data source comes from Martin et.al. (2022).\n\nwebsite\nR package\nPeer reviewed manuscript in JAMA Network Open:\n\nDevelopment of a Pediatric Blood Pressure Percentile Tool for Clinical Decision Support"
-  },
-  {
-    "objectID": "software.html#redcapexporter",
-    "href": "software.html#redcapexporter",
-    "title": "Software",
-    "section": "REDCapExporter",
-    "text": "REDCapExporter"
-  },
-  {
-    "objectID": "software.html#cpr",
-    "href": "software.html#cpr",
-    "title": "Software",
-    "section": "cpr",
-    "text": "cpr"
-  },
-  {
-    "objectID": "software.html#pccc",
-    "href": "software.html#pccc",
-    "title": "Software",
-    "section": "pccc",
-    "text": "pccc"
-  },
-  {
-    "objectID": "software.html#qwraps2",
-    "href": "software.html#qwraps2",
-    "title": "Software",
-    "section": "qwraps2",
-    "text": "qwraps2"
-  },
-  {
-    "objectID": "software.html#ensr",
-    "href": "software.html#ensr",
-    "title": "Software",
-    "section": "ensr",
-    "text": "ensr"
+    "text": "R-Bloggers\nRStudio Blog\nThe International Biometric Society\nDepartment of Biomedical Informatics Newsroom"
   }
 ]

@@ -4,7 +4,25 @@ title: "Software"
 
 I have developed and published several R packages and tools.
 
+Listed here in alphabetical order.  Click the link to get a summary of the tool
+and links to the software and more details.
+
+- [cpr](#cpr)
+- [ensr](#ensr)
+- [pccc](#pccc)
+- [pedbp](#pedbp)
+- [phoenix](#phoenix)
+- [qwraps2](#qwraps2)
+- [REDCapExporter](#REDCapExporter)
+
 ## phoenix
+
+[![](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml)
+[![](https://codecov.io/gh/CU-DBMI-Peds/phoenix/graph/badge.svg?token=PKLXJ9SQOD)](https://app.codecov.io/gh/CU-DBMI-Peds/phoenix)
+[![](https://www.r-pkg.org/badges/version/phoenix)](https://CRAN.R-project.org/package=phoenix)
+[![](https://cranlogs.r-pkg.org/badges/last-month/phoenix?color=blue)](https://r-pkg.org/pkg/phoenix)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/phoenix?color=blue)](https://r-pkg.org/pkg/phoenix)
 
 The phoenix [R package](https://cran.r-project.org/package=phoenix) and
 [Python module](https://pypi.org/project/phoenix-sepsis/) implement the Phoenix
@@ -13,12 +31,20 @@ criteria for pediatric sepsis and septic shock.
 - [website](https://cu-dbmi-peds.github.io/phoenix/index.html)
 - [R package](https://cran.r-project.org/package=phoenix)
 - [Python module](https://pypi.org/project/phoenix-sepsis/)
+- [github](https://github.com/cu-DBMI-Peds/phoenix/)
 
 - Peer reviewed manuscript in JAMIA Open:
   - [phoenix: an R package and Python module for calculating the Phoenix pediatric
   sepsis score and criteria](https://doi.org/10.1093/jamiaopen/ooae066)
 
 ## pedbp
+
+[![](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![](https://github.com/dewittpe/pedbp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dewittpe/pedbp/actions/workflows/R-CMD-check.yaml)
+[![](https://codecov.io/gh/dewittpe/pedbp/branch/main/graph/badge.svg?token=DYiVkUwKrP)](https://app.codecov.io/gh/dewittpe/pedbp)
+[![](https://www.r-pkg.org/badges/version/pedbp)](https://cran.r-project.org/package=pedbp)
+[![](https://cranlogs.r-pkg.org/badges/last-month/pedbp?color=blue)](https://r-pkg.org/pkg/pedbp)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/pedbp?color=blue)](https://r-pkg.org/pkg/pedbp)
 
 Data and utilities for estimating pediatric blood pressure percentiles by sex,
 age, and optionally height (stature) as described in [Martin et.al.
@@ -31,8 +57,11 @@ Prevention (CDC)](doi:10.1542/peds.2009-2107C) or from [Lo et.al.
 (2013)](doi:10.1542/peds.2012-1292).  The flowchart for selecting the informing
 data source comes from [Martin et.al. (2022)](doi:10.1542/hpeds.2021-005998).
 
+
 - [website](https://www.peteredewitt.com/pedbp/)
+- [Shiny app](https://dewittpe.shinyapps.io/pedbp/)
 - [R package](https://cran.r-project.org/package=pedbp)
+- [github](https://dewittpe.github.com/pedbp)
 
 - Peer reviewed manuscript in JAMA Network Open:
   - [Development of a Pediatric Blood Pressure Percentile Tool for Clinical
