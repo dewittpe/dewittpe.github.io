@@ -1,0 +1,15 @@
+{
+  "hash": "42379d2250e791f55a34634c5487a5ca",
+  "result": {
+    "engine": "knitr",
+    "markdown": "      ---\n      title:  \"A Report\"\n      output: html_document\n      ---\n      \n\n\n      ::: {.cell}\n      \n      ```{.r .cell-code}\n      fit <- lm(mpg ~ wt + hp, data = mtcars)\n      x <- pi\n      ```\n      :::\n\n      ::: {.cell}\n      \n      ```{.r .cell-code}\n      fit <- lm(mpg ~ wt + hp + am, data = mtcars)\n      xx <- exp(1)\n      ```\n      :::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
