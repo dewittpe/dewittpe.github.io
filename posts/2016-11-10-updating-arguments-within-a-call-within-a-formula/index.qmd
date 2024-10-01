@@ -1,8 +1,8 @@
 ---
 title:  "Updating Call Arguments"
 date:   2016-11-10
-layout: post
-tags: [R, programming]
+date-modified:   2024-10-01
+categories: [R, programming]
 ---
 
 The `stats::update` function is one of my favorite tools in R.  Using this
@@ -35,7 +35,7 @@ diamonds$cut     <- factor(diamonds$cut, ordered = FALSE)
 diamonds$color   <- factor(diamonds$color, ordered = FALSE)
 diamonds$clarity <- factor(diamonds$clarity, ordered = FALSE)
 
-dplyr::glimpse(diamonds) 
+dplyr::glimpse(diamonds)
 ## Observations: 53,940
 ## Variables: 10
 ## $ carat   <dbl> 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, ...
@@ -93,16 +93,16 @@ least in name, as expected:
 
 ```r
 coef(original_fit)
-##  (Intercept)        carat      cutGood cutVery Good   cutPremium 
-##   -7362.8022    8886.1289     655.7674     848.7169     869.3959 
-##     cutIdeal       colorE       colorF       colorG       colorH 
-##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977 
-##       colorI       colorJ   claritySI2   claritySI1   clarityVS2 
-##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291 
-##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF 
+##  (Intercept)        carat      cutGood cutVery Good   cutPremium
+##   -7362.8022    8886.1289     655.7674     848.7169     869.3959
+##     cutIdeal       colorE       colorF       colorG       colorH
+##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977
+##       colorI       colorJ   claritySI2   claritySI1   clarityVS2
+##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291
+##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF
 ##    4534.8790    4967.1994    5072.0276    5419.6468
 coef(updated_fit_1)
-##  (Intercept)        depth        table 
+##  (Intercept)        depth        table
 ## -15084.96675     82.26159    242.58346
 ```
 
@@ -114,26 +114,26 @@ with a `carat` weight under 2.
 ```r
 updated_fit_2 <- update(original_fit, data = dplyr::filter(diamonds, carat < 2))
 getCall(updated_fit_2)
-## lm(formula = price ~ carat + cut + color + clarity, data = dplyr::filter(diamonds, 
+## lm(formula = price ~ carat + cut + color + clarity, data = dplyr::filter(diamonds,
 ##     carat < 2))
 
 coef(original_fit)
-##  (Intercept)        carat      cutGood cutVery Good   cutPremium 
-##   -7362.8022    8886.1289     655.7674     848.7169     869.3959 
-##     cutIdeal       colorE       colorF       colorG       colorH 
-##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977 
-##       colorI       colorJ   claritySI2   claritySI1   clarityVS2 
-##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291 
-##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF 
+##  (Intercept)        carat      cutGood cutVery Good   cutPremium
+##   -7362.8022    8886.1289     655.7674     848.7169     869.3959
+##     cutIdeal       colorE       colorF       colorG       colorH
+##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977
+##       colorI       colorJ   claritySI2   claritySI1   clarityVS2
+##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291
+##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF
 ##    4534.8790    4967.1994    5072.0276    5419.6468
 coef(updated_fit_2)
-##  (Intercept)        carat      cutGood cutVery Good   cutPremium 
-##   -6162.1964    8724.8278     527.6717     712.9909     744.0746 
-##     cutIdeal       colorE       colorF       colorG       colorH 
-##     861.5481    -223.8747    -313.4734    -508.2788    -996.4275 
-##       colorI       colorJ   claritySI2   claritySI1   clarityVS2 
-##   -1492.3535   -2210.0376    1635.1460    2580.1405    3240.4271 
-##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF 
+##  (Intercept)        carat      cutGood cutVery Good   cutPremium
+##   -6162.1964    8724.8278     527.6717     712.9909     744.0746
+##     cutIdeal       colorE       colorF       colorG       colorH
+##     861.5481    -223.8747    -313.4734    -508.2788    -996.4275
+##       colorI       colorJ   claritySI2   claritySI1   clarityVS2
+##   -1492.3535   -2210.0376    1635.1460    2580.1405    3240.4271
+##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF
 ##    3568.3900    3999.7614    4094.5453    4437.4743
 ```
 A second way to achieve the same results as seen with `updated_fit_2` is to use
@@ -142,17 +142,17 @@ the `update` function to add to the call:
 ```r
 updated_fit_3 <- update(original_fit, subset = carat < 2)
 getCall(updated_fit_3)
-## lm(formula = price ~ carat + cut + color + clarity, data = diamonds, 
+## lm(formula = price ~ carat + cut + color + clarity, data = diamonds,
 ##     subset = carat < 2)
 
 coef(original_fit)
-##  (Intercept)        carat      cutGood cutVery Good   cutPremium 
-##   -7362.8022    8886.1289     655.7674     848.7169     869.3959 
-##     cutIdeal       colorE       colorF       colorG       colorH 
-##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977 
-##       colorI       colorJ   claritySI2   claritySI1   clarityVS2 
-##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291 
-##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF 
+##  (Intercept)        carat      cutGood cutVery Good   cutPremium
+##   -7362.8022    8886.1289     655.7674     848.7169     869.3959
+##     cutIdeal       colorE       colorF       colorG       colorH
+##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977
+##       colorI       colorJ   claritySI2   claritySI1   clarityVS2
+##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291
+##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF
 ##    4534.8790    4967.1994    5072.0276    5419.6468
 all.equal(coef(updated_fit_3), coef(updated_fit_2))
 ## [1] TRUE
@@ -162,32 +162,32 @@ more than one part of a call with one `update` call
 
 
 ```r
-updated_fit_4 <- update(original_fit, 
-                        formula = . ~ depth, 
-                        data    = dplyr::filter(diamonds, carat < 2), 
+updated_fit_4 <- update(original_fit,
+                        formula = . ~ depth,
+                        data    = dplyr::filter(diamonds, carat < 2),
                         subset  = cut %in% c("Good", "Very Good"))
 getCall(updated_fit_4)
-## lm(formula = price ~ depth, data = dplyr::filter(diamonds, carat < 
+## lm(formula = price ~ depth, data = dplyr::filter(diamonds, carat <
 ##     2), subset = cut %in% c("Good", "Very Good"))
 summary(updated_fit_4)
-## 
+##
 ## Call:
-## lm(formula = price ~ depth, data = dplyr::filter(diamonds, carat < 
+## lm(formula = price ~ depth, data = dplyr::filter(diamonds, carat <
 ##     2), subset = cut %in% c("Good", "Very Good"))
-## 
+##
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -3316.1 -2596.6  -954.8  1364.0 15272.6 
-## 
+##     Min      1Q  Median      3Q     Max
+## -3316.1 -2596.6  -954.8  1364.0 15272.6
+##
 ## Coefficients:
-##             Estimate Std. Error t value Pr(>|t|)    
+##             Estimate Std. Error t value Pr(>|t|)
 ## (Intercept)  5027.60     934.21   5.382 7.48e-08 ***
-## depth         -24.33      15.07  -1.615    0.106    
+## depth         -24.33      15.07  -1.615    0.106
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-## 
+##
 ## Residual standard error: 3187 on 16321 degrees of freedom
-## Multiple R-squared:  0.0001598,	Adjusted R-squared:  9.852e-05 
+## Multiple R-squared:  0.0001598,	Adjusted R-squared:  9.852e-05
 ## F-statistic: 2.608 on 1 and 16321 DF,  p-value: 0.1063
 ```
 
@@ -204,16 +204,16 @@ reuse operator, the result will be nonsensical.
 ```r
 scaled_fit_1 <- update(original_fit, formula = . ~ . + scale(carat))
 getCall(scaled_fit_1)
-## lm(formula = price ~ carat + cut + color + clarity + scale(carat), 
+## lm(formula = price ~ carat + cut + color + clarity + scale(carat),
 ##     data = diamonds)
 coef(scaled_fit_1)
-##  (Intercept)        carat      cutGood cutVery Good   cutPremium 
-##   -7362.8022    8886.1289     655.7674     848.7169     869.3959 
-##     cutIdeal       colorE       colorF       colorG       colorH 
-##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977 
-##       colorI       colorJ   claritySI2   claritySI1   clarityVS2 
-##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291 
-##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF scale(carat) 
+##  (Intercept)        carat      cutGood cutVery Good   cutPremium
+##   -7362.8022    8886.1289     655.7674     848.7169     869.3959
+##     cutIdeal       colorE       colorF       colorG       colorH
+##     998.2544    -211.6825    -303.3100    -506.1995    -978.6977
+##       colorI       colorJ   claritySI2   claritySI1   clarityVS2
+##   -1440.3019   -2325.2224    2625.9500    3573.6880    4217.8291
+##   clarityVS1  clarityVVS2  clarityVVS1    clarityIF scale(carat)
 ##    4534.8790    4967.1994    5072.0276    5419.6468           NA
 ```
 Note that `carat` appears twice in the right hand side of the formula.  Further,
@@ -222,11 +222,11 @@ design matrix is a linear function of `carat`.  We've created a regression model
 with a rank deficient design matrix.  Oops.
 
 Obviously, we need to omit `carat` and replace with `scale(carat)` in the
-updated formula.  Two ways to do this.  
+updated formula.  Two ways to do this.
 
 1. Don't use the `.` on the right hand side
 and write out the full right hand side yourself.  This option requires too much
-effort and would suck to maintain.  
+effort and would suck to maintain.
 
 2. Continue to use the `.` on the right hand side and omit `carat` via `-`
 
@@ -236,13 +236,13 @@ scaled_fit_2 <- update(original_fit, formula = . ~ . - carat + scale(carat))
 getCall(scaled_fit_2)
 ## lm(formula = price ~ cut + color + clarity + scale(carat), data = diamonds)
 coef(scaled_fit_2)
-##  (Intercept)      cutGood cutVery Good   cutPremium     cutIdeal 
-##    -272.2067     655.7674     848.7169     869.3959     998.2544 
-##       colorE       colorF       colorG       colorH       colorI 
-##    -211.6825    -303.3100    -506.1995    -978.6977   -1440.3019 
-##       colorJ   claritySI2   claritySI1   clarityVS2   clarityVS1 
-##   -2325.2224    2625.9500    3573.6880    4217.8291    4534.8790 
-##  clarityVVS2  clarityVVS1    clarityIF scale(carat) 
+##  (Intercept)      cutGood cutVery Good   cutPremium     cutIdeal
+##    -272.2067     655.7674     848.7169     869.3959     998.2544
+##       colorE       colorF       colorG       colorH       colorI
+##    -211.6825    -303.3100    -506.1995    -978.6977   -1440.3019
+##       colorJ   claritySI2   claritySI1   clarityVS2   clarityVS1
+##   -2325.2224    2625.9500    3573.6880    4217.8291    4534.8790
+##  clarityVVS2  clarityVVS1    clarityIF scale(carat)
 ##    4967.1994    5072.0276    5419.6468    4212.1250
 ```
 Cool.  That worked well.
@@ -262,10 +262,10 @@ scaled_fit_4 <-
   update(scaled_fit_2, formula = . ~ . - scale(carat) + scale(carat, scale = FALSE))
 
 getCall(scaled_fit_3)
-## lm(formula = price ~ cut + color + clarity + scale(carat) + scale(carat, 
+## lm(formula = price ~ cut + color + clarity + scale(carat) + scale(carat,
 ##     scale = FALSE), data = diamonds)
 getCall(scaled_fit_4)
-## lm(formula = price ~ cut + color + clarity + scale(carat, scale = FALSE), 
+## lm(formula = price ~ cut + color + clarity + scale(carat, scale = FALSE),
 ##     data = diamonds)
 ```
 
@@ -281,35 +281,35 @@ scaled_fit_6 <-p
 ## Error in eval(expr, envir, enclos): object 'p' not found
   update(scaled_fit_4,
          formula = . ~ . - scale(carat, scale = FALSE) + scale(carat, center = TRUE))
-## 
+##
 ## Call:
-## lm(formula = price ~ cut + color + clarity + scale(carat, center = TRUE), 
+## lm(formula = price ~ cut + color + clarity + scale(carat, center = TRUE),
 ##     data = diamonds)
-## 
+##
 ## Coefficients:
-##                 (Intercept)                      cutGood  
-##                      -272.2                        655.8  
-##                cutVery Good                   cutPremium  
-##                       848.7                        869.4  
-##                    cutIdeal                       colorE  
-##                       998.3                       -211.7  
-##                      colorF                       colorG  
-##                      -303.3                       -506.2  
-##                      colorH                       colorI  
-##                      -978.7                      -1440.3  
-##                      colorJ                   claritySI2  
-##                     -2325.2                       2625.9  
-##                  claritySI1                   clarityVS2  
-##                      3573.7                       4217.8  
-##                  clarityVS1                  clarityVVS2  
-##                      4534.9                       4967.2  
-##                 clarityVVS1                    clarityIF  
-##                      5072.0                       5419.6  
-## scale(carat, center = TRUE)  
+##                 (Intercept)                      cutGood
+##                      -272.2                        655.8
+##                cutVery Good                   cutPremium
+##                       848.7                        869.4
+##                    cutIdeal                       colorE
+##                       998.3                       -211.7
+##                      colorF                       colorG
+##                      -303.3                       -506.2
+##                      colorH                       colorI
+##                      -978.7                      -1440.3
+##                      colorJ                   claritySI2
+##                     -2325.2                       2625.9
+##                  claritySI1                   clarityVS2
+##                      3573.7                       4217.8
+##                  clarityVS1                  clarityVVS2
+##                      4534.9                       4967.2
+##                 clarityVVS1                    clarityIF
+##                      5072.0                       5419.6
+## scale(carat, center = TRUE)
 ##                      4212.1
-                                                                           
+
 getCall(scaled_fit_5)
-## lm(formula = price ~ cut + color + clarity + scale(carat, scale = FALSE) + 
+## lm(formula = price ~ cut + color + clarity + scale(carat, scale = FALSE) +
 ##     scale(carat, center = TRUE), data = diamonds)
 getCall(scaled_fit_6)
 ## Error in getCall(scaled_fit_6): object 'scaled_fit_6' not found
@@ -328,30 +328,30 @@ We will see why this is important later.)
 ```r
 cut_fit_1 <-
   update(original_fit,
-         formula = . ~ . - carat + 
-                       cut(carat, 
+         formula = . ~ . - carat +
+                       cut(carat,
                            breaks = seq(0, 5.5, by = 0.5),
                            right = FALSE)
          )
 names(coef(cut_fit_1))
-##  [1] "(Intercept)"                                                     
-##  [2] "cutGood"                                                         
-##  [3] "cutVery Good"                                                    
-##  [4] "cutPremium"                                                      
-##  [5] "cutIdeal"                                                        
-##  [6] "colorE"                                                          
-##  [7] "colorF"                                                          
-##  [8] "colorG"                                                          
-##  [9] "colorH"                                                          
-## [10] "colorI"                                                          
-## [11] "colorJ"                                                          
-## [12] "claritySI2"                                                      
-## [13] "claritySI1"                                                      
-## [14] "clarityVS2"                                                      
-## [15] "clarityVS1"                                                      
-## [16] "clarityVVS2"                                                     
-## [17] "clarityVVS1"                                                     
-## [18] "clarityIF"                                                       
+##  [1] "(Intercept)"
+##  [2] "cutGood"
+##  [3] "cutVery Good"
+##  [4] "cutPremium"
+##  [5] "cutIdeal"
+##  [6] "colorE"
+##  [7] "colorF"
+##  [8] "colorG"
+##  [9] "colorH"
+## [10] "colorI"
+## [11] "colorJ"
+## [12] "claritySI2"
+## [13] "claritySI1"
+## [14] "clarityVS2"
+## [15] "clarityVS1"
+## [16] "clarityVVS2"
+## [17] "clarityVVS1"
+## [18] "clarityIF"
 ## [19] "cut(carat, breaks = seq(0, 5.5, by = 0.5), right = FALSE)[0.5,1)"
 ## [20] "cut(carat, breaks = seq(0, 5.5, by = 0.5), right = FALSE)[1,1.5)"
 ## [21] "cut(carat, breaks = seq(0, 5.5, by = 0.5), right = FALSE)[1.5,2)"
@@ -379,9 +379,9 @@ First, let's look at the structure of a formula.  We'll use the object `f`,
 defined below, as the primary object in this example.
 
 ```r
-f <- price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5, by = 0.5), right = FALSE) 
+f <- price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5, by = 0.5), right = FALSE)
 f
-## price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5, 
+## price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5,
 ##     by = 0.5), right = FALSE)
 str(f)
 ## Class 'formula'  language price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5, by = 0.5),      right = FALSE)
@@ -404,31 +404,31 @@ the formula object.
 as.list(f)
 ## [[1]]
 ## `~`
-## 
+##
 ## [[2]]
 ## price
-## 
+##
 ## [[3]]
-## color + cut + clarity + cut(carat, breaks = seq(0, 5.5, by = 0.5), 
+## color + cut + clarity + cut(carat, breaks = seq(0, 5.5, by = 0.5),
 ##     right = FALSE)
-lapply(as.list(f), as.list) 
+lapply(as.list(f), as.list)
 ## [[1]]
 ## [[1]][[1]]
 ## `~`
-## 
-## 
+##
+##
 ## [[2]]
 ## [[2]][[1]]
 ## price
-## 
-## 
+##
+##
 ## [[3]]
 ## [[3]][[1]]
 ## `+`
-## 
+##
 ## [[3]][[2]]
 ## color + cut + clarity
-## 
+##
 ## [[3]][[3]]
 ## cut(carat, breaks = seq(0, 5.5, by = 0.5), right = FALSE)
 ```
@@ -440,29 +440,29 @@ lapply(lapply(as.list(f), as.list)[[3]], as.list)
 ## [[1]]
 ## [[1]][[1]]
 ## `+`
-## 
-## 
+##
+##
 ## [[2]]
 ## [[2]][[1]]
 ## `+`
-## 
+##
 ## [[2]][[2]]
 ## color + cut
-## 
+##
 ## [[2]][[3]]
 ## clarity
-## 
-## 
+##
+##
 ## [[3]]
 ## [[3]][[1]]
 ## cut
-## 
+##
 ## [[3]][[2]]
 ## carat
-## 
+##
 ## [[3]]$breaks
 ## seq(0, 5.5, by = 0.5)
-## 
+##
 ## [[3]]$right
 ## [1] FALSE
 ```
@@ -480,7 +480,7 @@ it's parts.
 decon <- function(x) {
   if (is.recursive(x)) {
     lapply(as.list(x), decon)
-  } else { 
+  } else {
     x
   }
 }
@@ -489,57 +489,57 @@ The `decon` function rips apart any recursive object until only the
 non-recursive elements remain.  Passing `f` to `decon` yields:
 
 ```r
-decon(f) 
+decon(f)
 ## [[1]]
 ## `~`
-## 
+##
 ## [[2]]
 ## price
-## 
+##
 ## [[3]]
 ## [[3]][[1]]
 ## `+`
-## 
+##
 ## [[3]][[2]]
 ## [[3]][[2]][[1]]
 ## `+`
-## 
+##
 ## [[3]][[2]][[2]]
 ## [[3]][[2]][[2]][[1]]
 ## `+`
-## 
+##
 ## [[3]][[2]][[2]][[2]]
 ## color
-## 
+##
 ## [[3]][[2]][[2]][[3]]
 ## cut
-## 
-## 
+##
+##
 ## [[3]][[2]][[3]]
 ## clarity
-## 
-## 
+##
+##
 ## [[3]][[3]]
 ## [[3]][[3]][[1]]
 ## cut
-## 
+##
 ## [[3]][[3]][[2]]
 ## carat
-## 
+##
 ## [[3]][[3]]$breaks
 ## [[3]][[3]]$breaks[[1]]
 ## seq
-## 
+##
 ## [[3]][[3]]$breaks[[2]]
 ## [1] 0
-## 
+##
 ## [[3]][[3]]$breaks[[3]]
 ## [1] 5.5
-## 
+##
 ## [[3]][[3]]$breaks$by
 ## [1] 0.5
-## 
-## 
+##
+##
 ## [[3]][[3]]$right
 ## [1] FALSE
 ```
@@ -559,12 +559,12 @@ behavior.
 decon <- function(x) {
   if (is.recursive(x)) {
     as.call(lapply(as.list(x), decon))
-  } else { 
+  } else {
     x
   }
 }
 decon(f)
-## price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5, 
+## price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5,
 ##     by = 0.5), right = FALSE)
 all.equal(decon(f), f)
 ## [1] TRUE
@@ -576,7 +576,7 @@ first element followed by two arguments.  A simple example with addition:
 as.call(list(`+`, 1, 2))
 ## .Primitive("+")(1, 2)
 
-eval(as.call(list(`+`, 1, 2))) 
+eval(as.call(list(`+`, 1, 2)))
 ## [1] 3
 ```
 By wrapping the `lapply` in the `as.call` within the `decon` function we
@@ -610,10 +610,10 @@ decon <- function(x, nb) {
   }
 }
 f
-## price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5, 
+## price ~ color + cut + clarity + cut(carat, breaks = seq(0, 5.5,
 ##     by = 0.5), right = FALSE)
 decon(f, c(0, 3))
-## price ~ color + cut + clarity + cut(carat, breaks = c(0, 3), 
+## price ~ color + cut + clarity + cut(carat, breaks = c(0, 3),
 ##     right = FALSE)
 ```
 We're almost there.  The return from `decon` is a `formula`.  However, we have
@@ -642,8 +642,8 @@ newbreaks <- function(form, nb) {
   out
 }
 
-newbreaks(f, c(0, 3)) 
-## price ~ color + cut + clarity + cut(carat, breaks = c(0, 3), 
+newbreaks(f, c(0, 3))
+## price ~ color + cut + clarity + cut(carat, breaks = c(0, 3),
 ##     right = FALSE)
 ```
 
@@ -660,70 +660,70 @@ new_fit_3 <-
   update(cut_fit_1, formula = newbreaks(formula(cut_fit_1), seq(0, 5.5, by = 1.25)))
 
 names(coef(new_fit_1))
-##  [1] "(Intercept)"                                        
-##  [2] "cutGood"                                            
-##  [3] "cutVery Good"                                       
-##  [4] "cutPremium"                                         
-##  [5] "cutIdeal"                                           
-##  [6] "colorE"                                             
-##  [7] "colorF"                                             
-##  [8] "colorG"                                             
-##  [9] "colorH"                                             
-## [10] "colorI"                                             
-## [11] "colorJ"                                             
-## [12] "claritySI2"                                         
-## [13] "claritySI1"                                         
-## [14] "clarityVS2"                                         
-## [15] "clarityVS1"                                         
-## [16] "clarityVVS2"                                        
-## [17] "clarityVVS1"                                        
-## [18] "clarityIF"                                          
+##  [1] "(Intercept)"
+##  [2] "cutGood"
+##  [3] "cutVery Good"
+##  [4] "cutPremium"
+##  [5] "cutIdeal"
+##  [6] "colorE"
+##  [7] "colorF"
+##  [8] "colorG"
+##  [9] "colorH"
+## [10] "colorI"
+## [11] "colorJ"
+## [12] "claritySI2"
+## [13] "claritySI1"
+## [14] "clarityVS2"
+## [15] "clarityVS1"
+## [16] "clarityVVS2"
+## [17] "clarityVVS1"
+## [18] "clarityIF"
 ## [19] "cut(carat, breaks = c(0, 1, 2), right = FALSE)[1,2)"
 names(coef(new_fit_2))
-##  [1] "(Intercept)"                                           
-##  [2] "cutGood"                                               
-##  [3] "cutVery Good"                                          
-##  [4] "cutPremium"                                            
-##  [5] "cutIdeal"                                              
-##  [6] "colorE"                                                
-##  [7] "colorF"                                                
-##  [8] "colorG"                                                
-##  [9] "colorH"                                                
-## [10] "colorI"                                                
-## [11] "colorJ"                                                
-## [12] "claritySI2"                                            
-## [13] "claritySI1"                                            
-## [14] "clarityVS2"                                            
-## [15] "clarityVS1"                                            
-## [16] "clarityVVS2"                                           
-## [17] "clarityVVS1"                                           
-## [18] "clarityIF"                                             
+##  [1] "(Intercept)"
+##  [2] "cutGood"
+##  [3] "cutVery Good"
+##  [4] "cutPremium"
+##  [5] "cutIdeal"
+##  [6] "colorE"
+##  [7] "colorF"
+##  [8] "colorG"
+##  [9] "colorH"
+## [10] "colorI"
+## [11] "colorJ"
+## [12] "claritySI2"
+## [13] "claritySI1"
+## [14] "clarityVS2"
+## [15] "clarityVS1"
+## [16] "clarityVVS2"
+## [17] "clarityVVS1"
+## [18] "clarityIF"
 ## [19] "cut(carat, breaks = c(0, 1, 3, 5), right = FALSE)[1,3)"
 ## [20] "cut(carat, breaks = c(0, 1, 3, 5), right = FALSE)[3,5)"
 names(coef(new_fit_3))
-##  [1] "(Intercept)"                                                           
-##  [2] "cutGood"                                                               
-##  [3] "cutVery Good"                                                          
-##  [4] "cutPremium"                                                            
-##  [5] "cutIdeal"                                                              
-##  [6] "colorE"                                                                
-##  [7] "colorF"                                                                
-##  [8] "colorG"                                                                
-##  [9] "colorH"                                                                
-## [10] "colorI"                                                                
-## [11] "colorJ"                                                                
-## [12] "claritySI2"                                                            
-## [13] "claritySI1"                                                            
-## [14] "clarityVS2"                                                            
-## [15] "clarityVS1"                                                            
-## [16] "clarityVVS2"                                                           
-## [17] "clarityVVS1"                                                           
-## [18] "clarityIF"                                                             
+##  [1] "(Intercept)"
+##  [2] "cutGood"
+##  [3] "cutVery Good"
+##  [4] "cutPremium"
+##  [5] "cutIdeal"
+##  [6] "colorE"
+##  [7] "colorF"
+##  [8] "colorG"
+##  [9] "colorH"
+## [10] "colorI"
+## [11] "colorJ"
+## [12] "claritySI2"
+## [13] "claritySI1"
+## [14] "clarityVS2"
+## [15] "clarityVS1"
+## [16] "clarityVVS2"
+## [17] "clarityVVS1"
+## [18] "clarityIF"
 ## [19] "cut(carat, breaks = c(0, 1.25, 2.5, 3.75, 5), right = FALSE)[1.25,2.5)"
 ## [20] "cut(carat, breaks = c(0, 1.25, 2.5, 3.75, 5), right = FALSE)[2.5,3.75)"
 ## [21] "cut(carat, breaks = c(0, 1.25, 2.5, 3.75, 5), right = FALSE)[3.75,5)"
 ```
-         
+
 
 ## Why, Why would you ever need this?
 I hope the above examples would have answered this question.  If not, here was
@@ -734,7 +734,7 @@ knot locations within a spline.  Originally, this meant using the `splines::bs`
 call and adjusting the `knots` argument while preserving the values passed to
 the `degree`, `intercept` and `Boundary.knots` arguments.  If you are familiar
 with the `splines::bs` call then you'll know that the there are default
-arguments to each of these after mentioned arguments.  
+arguments to each of these after mentioned arguments.
 
 Further, the objects I really needed to update where more complex than just an
 `lm` object and, as new software goes, had an ever changing API. Construction of
@@ -750,4 +750,4 @@ the implementation.
 *Acknowledgements:*
 I didn't figure out how to do this completely on my own.  I had posed a question
 on [stackoverflow](http://stackoverflow.com/q/25272387/1104685) which was the
-basis for this post  and extensions. 
+basis for this post  and extensions.

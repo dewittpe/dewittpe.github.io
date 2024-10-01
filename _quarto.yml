@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Minding Broken Clocks"
+  navbar:
+    right:
+      - about.qmd
+      - blogroll.qmd
+      - icon: github
+        href: https://github.com/dewittpe
+      - icon: linkedin
+        href: https://www.linkedin.com/in/peter-dewitt/
+format:
+  html:
+    theme: slate
+    css: styles.css
+
+
+

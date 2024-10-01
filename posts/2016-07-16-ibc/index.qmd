@@ -1,9 +1,14 @@
 ---
 title:  "The 28th International Biometric Conference"
+subtitle: "Best Student Oral Presentation"
+author: "Peter E. DeWitt"
 date:   2016-07-16 12:00:00
-layout: post
-tags: [abstract, conferences, awards, cpr, phd]
+date-modified: 2024-10-01
+categories: [abstract, conferences, awards, cpr, phd, news]
 ---
+
+![Shaking hands with IBS President Elizabeth Thompson after being
+awarded __Best Student Oral Presentation__](hand_shake_640x480.jpg)
 
 [The International Biometric Society](http://www.biometricsociety.org/) (IBS) held the
 28th International Biometric Conference 10-15 July, 2016 in Victoria, British
@@ -18,10 +23,6 @@ student paper competition.
 
 These award announcements were also printed in the Biometic Bulletin, vol 33. no.
 3 July-September 2016.
-
-Below, I am shaking hands with IBS President Elizabeth Thompson after being
-awarded __Best Student Oral Presentation__.
-![Shanking Hands](/pictures/28th-ibc/hand_shake_640x480.jpg)
 
 ## Abstract
 The following is the abstract for the work I presented.

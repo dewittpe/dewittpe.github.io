@@ -1,8 +1,8 @@
 ---
 title:  "10th International Conference on Health Informatics"
 date:   2017-02-24 12:00:00
-layout: post
-tags: [abstract, conferences]
+date-modified:   2024-10-01
+categories: [news, abstract, conferences]
 ---
 
 I presented a paper at the 10th International Conference on Health Informatics
@@ -46,15 +46,15 @@ image analysis, process analysis, and translational research.
 I also enjoyed visiting the city or Porto.  Great wineries, food, and views on
 the river front.  A must visit.
 
-![](/pictures/porto/porto1.jpg)
+![](porto1.jpg)
 
-![](/pictures/porto/porto2.jpg)
+![](porto2.jpg)
 
-![](/pictures/porto/porto3.jpg)
+![](porto3.jpg)
 
-![](/pictures/porto/porto4.jpg)
+![](porto4.jpg)
 
-![Dom Luis I Bridge](/pictures/porto/porto5.jpg)
+![Dom Luis I Bridge](porto5.jpg)
 
 
 

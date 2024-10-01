@@ -1,0 +1,14 @@
+      ---
+      title:  "A Report"
+      output: html_document
+      ---
+      
+      ```{r, label = "first-chunk", cache = TRUE}
+      fit <- lm(mpg ~ wt + hp, data = mtcars)
+      x <- pi
+      ```
+      
+      ```{r, label = "second-chunk", cache = TRUE}
+      fit <- lm(mpg ~ wt + hp + am, data = mtcars)
+      xx <- exp(1)
+      ```

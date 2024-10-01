@@ -1,11 +1,12 @@
 ---
 title:  "Strother Walker Award"
+author: "Peter DeWitt"
 date:   2017-04-21 18:00:00
-layout: post
-tags: [awards]
+date-modified: 2024-10-01
+categories: [awards, news]
 ---
 
-The faculty of the 
+The faculty of the
 <a href="http://www.ucdenver.edu/academics/colleges/PublicHealth/Academics/departments/Biostatistics/Pages/welcome.aspx" target="_blank">Department of Biostatistics and Informatics</a>
 has awarded me the **2017 Strother Walker Award** based on outstanding work on
 your dissertation, and your many contributions to computational work being done

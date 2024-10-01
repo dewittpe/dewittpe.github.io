@@ -1,8 +1,8 @@
 ---
 title:  "dewittpe.github.io Set up"
 date:   2016-10-26 00:34:00
-layout: post
-tags: [general]
+date-modified: 2024-10-01
+categories: [news]
 ---
 
 I've spent the last several hours of yesterday this early morning putting the

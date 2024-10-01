@@ -1,39 +1,25 @@
 ---
 title:  "(lazy)Loading Cached Chunks into an Interactive R Session"
+author: "Peter DeWitt"
 date:   2017-01-03
-layout: post
-tags: [R, knitr, cache, qwraps2]
+date-modified: 2024-10-01
+categories: [R, knitr, cache, qwraps2]
 ---
 
 If you cache code chunks when using
-[`knitr`](https://CRAN.R-project.org/package=knitr) to generate reproducible
+[knitr](https://CRAN.R-project.org/package=knitr) to generate reproducible
 documents then you've likely had the issue arrise of needing to load the results
 of cached chunks into an active interactive R session.  The functions
 `lazyload_cache_dir` and `lazyload_cache_labels` have been added to the
 developmental version of [qwraps2](https://github.com/dewittpe/qwraps2) to make
 loading cached objects into an interactive R session easy.
 
+Let's make some trivial cached chunks in a file report.Rmd.
 
-
-Let's make some trivial cached chunks in a file `report.Rmd`
-
+```{r}
+#| echo: false
+cat(scan('report.Rmd', what = character(), sep = "\n"), sep = "\n")
 ```
-  ---
-  title:  "A Report"
-  output: html_document
-  ---
-  
-  ```{r first-chunk, cache = TRUE}
-  fit <- lm(mpg ~ wt + hp, data = mtcars)
-  x <- pi
-  ```
-  
-  ```{r second-chunk, cache = TRUE}
-  fit <- lm(mpg ~ wt + hp + am, data = mtcars)
-  xx <- exp(1)
-  ```
-```
-
   
 The resulting project directory looks like this:
 

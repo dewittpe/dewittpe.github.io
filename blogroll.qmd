@@ -1,0 +1,9 @@
+---
+title: "Blog Roll"
+---
+
+[R-Bloggers](https://www.r-bloggers.com/)
+
+[RStudio Blog](https://blog.rstudio.org)
+
+[The International Biometric Society](http://www.biometricsociety.org/)

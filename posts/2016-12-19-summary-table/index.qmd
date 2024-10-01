@@ -1,11 +1,9 @@
 ---
 title:  "Baseline Characteristics Tables with qwraps2"
 date:   2016-12-19
-layout: post
-tags: [R, data summaries, qwraps2]
+date-modified: 2024-10-01
+categories: [R, data summaries, qwraps2]
 ---
-
-
 
 Almost every biomedical research paper requires a "Table 1: baseline patient
 characteristics."  Many developers have published tools to help streamline the
@@ -20,7 +18,7 @@ present slightly different requirements for the contents and formating of the
 tables.  As such, functions which tried to "do it all", required
 constant modification to provide the needed output from each nuanced project.
 
-The [`tableone`](https://CRAN.R-project.org/package=tableone) package does a lot
+The [tableone](https://CRAN.R-project.org/package=tableone) package does a lot
 of good things, and is a great tool for quickly building the baseline summary
 tables.  What my experiences has taught me is that each row group, or even each
 row, might require some specific formating.  A function that treats all
@@ -33,14 +31,14 @@ for the summary statistics, and in a way that is easy to work with one or more
 grouping variables.
 
 The function `summary_table` within my
-[`qwraps2`](https://CRAN.R-project.org/package=qwraps2) package is the tool I
+[qwraps2](https://CRAN.R-project.org/package=qwraps2) package is the tool I
 and a few colleagues have started to rely on for building baseline patient
 characteristic tables.  (qwraps2, "quick wraps 2", is a package of formatting
 functions I've found useful for formating results and generating some graphics
 when authoring .Rmd and .Rnw files.)
 
 Load and attach the qwraps2 namespace.  We'll set the `qwraps2_markup` option to
-`markdown`.  If this option is not set, `qwraps2` uses
+`markdown`.  If this option is not set, qwraps2 uses
 `get0ption(qwraps2_markup, "latex")` as the default markup language.
 
 
@@ -87,7 +85,7 @@ explain the construction of the summary object constructed below.  The
 The construction of the summary table is achieved via `dplyr::summarize_`.
 
 The `mtcar_summaries` object constructed below, defines each needed row of the
-summary table via a `formula`.  I've included the  `qwraps2` namespace for
+summary table via a `formula`.  I've included the  qwraps2 namespace for
 clarity.
 
 
