@@ -18,7 +18,7 @@ Let's make some trivial cached chunks in a file report.Rmd.
 
 ```{r}
 #| echo: false
-cat(scan('report.Rmd', what = character(), sep = "\n"), sep = "\n")
+cat(scan('_report.Rmd', what = character(), sep = "\n"), sep = "\n")
 ```
   
 The resulting project directory looks like this:
