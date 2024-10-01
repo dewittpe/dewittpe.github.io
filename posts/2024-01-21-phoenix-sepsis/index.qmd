@@ -1,0 +1,100 @@
+---
+title: "A New Era For Diagnosis and Research in Pediatric Sepsis"
+author: "Peter E. DeWitt"
+date: "2024-01-21"
+date-modified: "2024-10-01"
+categories: [news, publications, sepsis]
+---
+
+Two major publications in the Journal of the American Medical Association (JAMA)
+have been released
+[International Consensus Criteria for Pediatric Sepsis and Septic
+Shock](doi:10.1001/jama.2024.0179) and
+[Development and Validation of the Phoenix Criteria for Pediatric Sepsis and
+Septic Shock](doi:10.1001/jama.2024.0196)
+detailing the efforts of an international team of researchers to modernize and
+improve on the diagnostic criteria for pediatric sepsis.  I am fortunate to have
+been part of this team and co-second author on the "Development" manuscript, and
+co-author on the consensus manuscript.
+
+These publications report on the development and consensus for the Phoenix
+Sepsis Score as the new diagnostic criteria for pediatric sepsis and septic
+shock. The publication coincides with the criteria being presented at the
+[2024 Critical Care
+Congress](https://www.sccm.org/Annual-Congress/critical-care-conference) of the
+[Society for Critical Care Medicine](https://sccm.org/Home) (SCCM)
+
+The Phoenix criteria will be utilized for diagnosing
+pediatric sepsis and septic shock in children all over the world.
+
+## The big picture
+
+Globally, pediatric sepsis is responsible for an estimated 3.3 million deaths per
+year.
+
+Prior to 2016, the diagnostic criteria for both adult and pediatric sepsis was
+based on an inflammatory response.  That criteria had low sensitivity and was
+difficult to implement across differently resourced medical facilities.  In 2016
+the diagnostic criteria for adult sepsis was redefined based on
+life-threatening organ dysfunction.  The publication of the Phoenix criteria in
+2024 brings the diagnostic criteria for pediatric sepsis in-line with the adult
+sepsis definition as both are now based on life-threatening organ dysfunction.
+Additionally, the Phoenix criteria was developed to be useful in high- and
+low-resourced environments, that is, the criteria is applicable across the
+globe, in major metropolitan area research hospitals and rural medical clinics.
+
+## How was the Phoenix Criteria Developed
+
+Data from hospital systems in North America, Asia, Africa, and South America,
+were collected and harmonized into one analysis set of more than 3 million
+patient encounters.  A data-informed Delphi process was used to identify the
+most useful existing organ dysfunction scoring systems.  The term "useful" means
+that the scoring system preformed well in estimating risk of death in statistical
+models, but was a reasonable scoring system to use world-wide.  For example, a
+score that considers a specific and expensive laboratory test would not be
+considered useful since it is unlikely to be available in middle- or low-
+resourced environments, even if that test was extremely good at predicating
+mortality in statistical models.
+
+After a set of useful organ dysfunction scores were identified, stacked
+regression methods were used to test different combinations of the scores for
+predicting mortality.  Finally, a set of organ dysfunction scores were selected
+by the Delphi-process and the Phoenix Criteria was established.
+
+## The Phoenix Criteria
+
+The reader is encouraged to reference the published papers for all the details.
+
+The Phoenix criteria is based on dysfunction in four organ
+systems
+
+1. respiratory,
+2. cardiovascular,
+3. coagulation, and
+4. neurologic.
+
+Points are given based on the level of dysfunction in each of the systems.  0-3
+points for respiratory, 0-6 points for cardiovascular, 0-2 points for
+coagulation, and 0-2 points for neurologic.  A total score of 2 or more points
+is the diagnostic criteria for sepsis, and a total score of 2 or more points
+with at least one point in the cardiovascular system is the diagnostic criteria
+for septic shock.
+
+Note: An extended scoring system using eight organ systems, the four listed
+above along with endocrine, immunologic, renal, and hepatic, has been published
+too.
+
+## Links to the Manuscripts:
+- [International Consensus Criteria for Pediatric Sepsis and Septic Shock](doi:10.1001/jama.2024.0179)
+- [Development and Validation of the Phoenix Criteria for Pediatric Sepsis and Septic Shock](doi:10.1001/jama.2024.0196)
+
+## Other links and news posts about this work:
+
+- [CU Researchers Unveil Modernized Criteria For Pediatric Sepsis and Septic Shock](https://news.cuanschutz.edu/dbmi/cu-researchers-unveil-modernized-criteria-for-pediatric-sepsis-and-septic-shock)
+
+- YouTube video of the presentation to SCCM: [Announcement of the Novel Phoenix Pediatric Sepsis
+  Criteria](https://www.youtube.com/watch?v=qjfhiMOV7M0&t=4396s&pp=ygUMc2NjbSBwaG9lbml4)
+
+- R package, Python Module, and SQL for applying the Phoenix criteria to data sets:
+  - [JAMIA Open](https://doi.org/10.1093/jamiaopen/ooae066)
+  - [phoenix R package](https://cu-dbmi-peds.github.io/phoenix/index.html)
