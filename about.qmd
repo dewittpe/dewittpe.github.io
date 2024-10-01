@@ -1,5 +1,6 @@
 ---
 title: "About"
+subtitle: "Peter E. DeWitt, Ph.D."
 image: dewittpe_headshot_20240828.jpg
 about:
   template: trestles
@@ -22,6 +23,13 @@ about:
       href: https://www.ncbi.nlm.nih.gov/myncbi/peter.dewitt.1/bibliography/public/
 
 ---
+
+Professionally I am an Assistant Research Professor in the Department of
+Biomedical Informatics, in the School of Medicine at the University of Colorado
+Anschutz Medical Campus.  I work as a biostatistician, data scientist, software
+developer, and mentor.
+
+Personally I am a Dad and woodworker.
 
 ## Education
 
