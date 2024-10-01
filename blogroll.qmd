@@ -7,3 +7,5 @@ title: "Blog Roll"
 [RStudio Blog](https://blog.rstudio.org)
 
 [The International Biometric Society](http://www.biometricsociety.org/)
+
+[Department of Biomedical Informatics Newsroom](https://news.cuanschutz.edu/dbmi)

@@ -6,6 +6,7 @@ website:
   title: "Minding Broken Clocks"
   navbar:
     right:
+      - software.qmd
       - about.qmd
       - blogroll.qmd
       - icon: github

@@ -4,7 +4,7 @@
     "href": "blogroll.html",
     "title": "Blog Roll",
     "section": "",
-    "text": "R-Bloggers\nRStudio Blog\nThe International Biometric Society"
+    "text": "R-Bloggers\nRStudio Blog\nThe International Biometric Society\nDepartment of Biomedical Informatics Newsroom"
   },
   {
     "objectID": "index.html",
@@ -184,9 +184,9 @@
   {
     "objectID": "software.html",
     "href": "software.html",
-    "title": "Software Packages",
+    "title": "Software",
     "section": "",
-    "text": "I have started to develop some R packages. Most of the work is publicly available on github. Here are the highlights:\n\n\n\nTable of Contents\n\n\n* R Packages: * cpr: Control Polygon Reduction * pccc: Pediatric Complex Chronic Conditions: An R Package * qwraps2: Quick Wraps 2 * sccm: Schwarz-Christoffel Conformal Mapping\n\n\n\n\n cpr: Control Polygon Reduction.\nback to top\n  cpr on GitHub \n   \nControl Polygon Reduction (CPR) is a method for finding parsimonious B-spline regression models. The cpr package provides methods for working with B-splines, control polygons, and running the CPR algorithm. Extension to control nets, and the control net reduction (CNR) algorithm for multi-variable B-spline models is also part of this package.\n\n\n\n# pccc: Pediatric Complex Chronic Conditions: An R Package\n\n\nback to top\n\n\n  pccc on GitHub \n\n\nI started th pccc R package as a side project while finishing up my Ph.D. When I graduated, others took the work and published the package.\n\n\nPediatric Complex Chronic Conditions (CCC) system was published “Pediatric complex chronic conditions classification system version 2: updated for ICD-10 and complex medical technology dependence and transplantation” by Chris Feudtner, James A Feinstein, Wenjun Zhong, Matt Hall and Dingwei Dai.\n\n\nSAS and STATA scripts to generate CCC categories from ICD codes were provided by Feudtner et al. as an appendix to the above manuscript. However, those scripts can take many hours to run on large datasets.\n\n\nThis package provides R functions to generate the CCC categories. Because the R functions are built with a C++ back-end, they are very computationally efficient.\n\n\n\n\n\nqwraps2: Quick Wraps 2\nback to top\n  qwraps2 on GitHub \n     \nWhen I need to provide a data analysis report, a manuscript draft, or working on my dissertation, I am almost certainly working in a literate programming paradigm. Nearly every document I produce is done using some subset of of R, knitr, pandoc, LaTeX, or markdown. As such, I have commonly needed for format strings, build data summary tables, or build specific graphics. The qwraps2 package is a collection of functions and tools I have been building and collecting to make my life easier. There are many packages like this on CRAN and elsewhere. The API and use of qwraps2 is design for my idiosyncrasies. I hope you will try it out, check the vignettes and even contribute to the work on github.\n\n\n\n sccm: Schwarz-Christoffel Conformal Mapping\nback to top\n  sccm on GitHub \n   \nAn R package Providing a conformal mapping of one 2D polygon to a rectangular region via the Schwarz-Christoffel theorem.\nMethods are provide to find a convex hull for an arbitrary set (x, y) coordinates. This hull, and the points within, are, via an (inverse) Schwarz-Christoffel mapping, mapped to the unit disk. A second Schwarz-Christoffel mapping from the unit disk to an arbitrary rectangle is use to finish the conformal mapping.\nThis package builds hulls via Andrew’s monotone chain algorithm implemented in C++. The Schwarz-Christoffel mappings are provided by the FORTRAN SCPACK by Lloyd N. Trefethen.\nNot on CRAN The FORTRAN code writes to the terminal directly. It is possible that when the FORTRAN code errors that the R session will be terminated as well. For these reasons the package does not pass CRAN checks. My FORTRAN skills are minimal, and it is a low priority, to fix this problem. If you’d like to help fix see Issue #1."
+    "text": "I have developed and published several R packages and tools."
   },
   {
     "objectID": "about.html",
@@ -243,5 +243,61 @@
     "title": "A New Era For Diagnosis and Research in Pediatric Sepsis",
     "section": "The Phoenix Criteria",
     "text": "The Phoenix Criteria\nThe reader is encouraged to reference the published papers for all the details.\nThe Phoenix criteria is based on dysfunction in four organ systems\n\nrespiratory,\ncardiovascular,\ncoagulation, and\nneurologic.\n\nPoints are given based on the level of dysfunction in each of the systems. 0-3 points for respiratory, 0-6 points for cardiovascular, 0-2 points for coagulation, and 0-2 points for neurologic. A total score of 2 or more points is the diagnostic criteria for sepsis, and a total score of 2 or more points with at least one point in the cardiovascular system is the diagnostic criteria for septic shock.\nNote: An extended scoring system using eight organ systems, the four listed above along with endocrine, immunologic, renal, and hepatic, has been published too."
+  },
+  {
+    "objectID": "software.html#education",
+    "href": "software.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\n\nPh.D.\n\n2017\nBiostatistics\nColorado School of Public Health\nUniversity of Colorado Anschutz Medical Campus\n\nM.S.\n\n2010\nStatistics\nColorado State University\n\nM.S.\n\n2007\nMathematics and Computer Science\nColorado School of Mines\n\nB.S.\n\nMathematics and Computer Science\n2005\nColorado School of Mines"
+  },
+  {
+    "objectID": "software.html#phoenix",
+    "href": "software.html#phoenix",
+    "title": "Software",
+    "section": "phoenix",
+    "text": "phoenix\nThe phoenix R package and Python module implement the Phoenix criteria for pediatric sepsis and septic shock.\n\nwebsite\nR package\nPython module\nPeer reviewed manuscript in JAMIA Open:\n\nphoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria"
+  },
+  {
+    "objectID": "software.html#pedbp",
+    "href": "software.html#pedbp",
+    "title": "Software",
+    "section": "pedbp",
+    "text": "pedbp\nData and utilities for estimating pediatric blood pressure percentiles by sex, age, and optionally height (stature) as described in Martin et.al. (2022). Blood pressure percentiles for children under one year of age come from Gemelli et.al. (1990). Estimates of blood pressure percentiles for children at least one year of age are informed by data from the National Heart, Lung, and Blood Institute (NHLBI) and the Centers for Disease Control and Prevention (CDC) or from Lo et.al. (2013). The flowchart for selecting the informing data source comes from Martin et.al. (2022).\n\nwebsite\nR package\nPeer reviewed manuscript in JAMA Network Open:\n\nDevelopment of a Pediatric Blood Pressure Percentile Tool for Clinical Decision Support"
+  },
+  {
+    "objectID": "software.html#redcapexporter",
+    "href": "software.html#redcapexporter",
+    "title": "Software",
+    "section": "REDCapExporter",
+    "text": "REDCapExporter"
+  },
+  {
+    "objectID": "software.html#cpr",
+    "href": "software.html#cpr",
+    "title": "Software",
+    "section": "cpr",
+    "text": "cpr"
+  },
+  {
+    "objectID": "software.html#pccc",
+    "href": "software.html#pccc",
+    "title": "Software",
+    "section": "pccc",
+    "text": "pccc"
+  },
+  {
+    "objectID": "software.html#qwraps2",
+    "href": "software.html#qwraps2",
+    "title": "Software",
+    "section": "qwraps2",
+    "text": "qwraps2"
+  },
+  {
+    "objectID": "software.html#ensr",
+    "href": "software.html#ensr",
+    "title": "Software",
+    "section": "ensr",
+    "text": "ensr"
   }
 ]

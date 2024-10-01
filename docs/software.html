@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Software Packages – Minding Broken Clocks</title>
+<title>Software – Minding Broken Clocks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -89,6 +89,10 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
+    <a class="nav-link active" href="./software.html" aria-current="page"> 
+<span class="menu-text">Software</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -123,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Software Packages</h1>
+<h1 class="title">Software</h1>
 </div>
 
 
@@ -140,66 +144,46 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><a name="top"></a> I have started to develop some R packages. Most of the work is publicly available on <a href="https://github.com/dewittpe">github</a>. Here are the highlights:</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td><em>Table of Contents</em></td>
-</tr>
-<tr class="even">
-<td>* R Packages: * <a href="#cpr">cpr</a>: Control Polygon Reduction * <a href="#pccc">pccc</a>: Pediatric Complex Chronic Conditions: An R Package * <a href="#qwraps2">qwraps2</a>: Quick Wraps 2 * <a href="#sccm">sccm</a>: Schwarz-Christoffel Conformal Mapping</td>
-</tr>
-</tbody>
-</table>
-<section id="cpr-control-polygon-reduction." class="level1">
-<h1><a name="cpr"></a> cpr: Control Polygon Reduction.</h1>
-<p><a href="#top">back to top</a></p>
-<p><a href="https://www.github.com/dewittpe/cpr" title="cpr on GitHub" target="_blank"> <i class="fa fa-github fa-2x"></i> <span class="label">cpr on GitHub</span> </a></p>
-<p><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" class="img-fluid" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a> <a href="https://travis-ci.com/dewittpe/cpr"><img src="https://travis-ci.com/dewittpe/cpr.svg?token=jowN3QrQKY7UdmTc4Efp&amp;branch=master" class="img-fluid" alt="Build Status"></a> <a href="https://codecov.io/github/dewittpe/cpr?branch=master"><img src="https://img.shields.io/codecov/c/github/dewittpe/cpr/master.svg" class="img-fluid" alt="Coverage Status"></a> <a href="https://cran.r-project.org/package=cpr"><img src="http://www.r-pkg.org/badges/version/cpr.png" class="img-fluid" alt="CRAN_Status_Badge"></a></p>
-<p>Control Polygon Reduction (CPR) is a method for finding parsimonious B-spline regression models. The cpr package provides methods for working with B-splines, control polygons, and running the CPR algorithm. Extension to control nets, and the control net reduction (CNR) algorithm for multi-variable B-spline models is also part of this package.</p>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td># <a name="pccc"></a>pccc: Pediatric Complex Chronic Conditions: An R Package</td>
-</tr>
-<tr class="even">
-<td><a href="#top">back to top</a></td>
-</tr>
-<tr class="odd">
-<td><a href="https://www.github.com/CUD2V/pccc" title="pccc on GitHub" target="_blank"> <i class="fa fa-github fa-2x"></i> <span class="label">pccc on GitHub</span> </a></td>
-</tr>
-<tr class="even">
-<td>I started th <a href="https://github.com/CUD2V/pccc">pccc</a> R package as a side project while finishing up my Ph.D.&nbsp;When I graduated, others took the work and published the package.</td>
-</tr>
-<tr class="odd">
-<td>Pediatric Complex Chronic Conditions (CCC) system was published “Pediatric complex chronic conditions classification system version 2: updated for ICD-10 and complex medical technology dependence and transplantation” by Chris Feudtner, James A Feinstein, Wenjun Zhong, Matt Hall and Dingwei Dai.</td>
-</tr>
-<tr class="even">
-<td>SAS and STATA scripts to generate CCC categories from ICD codes were provided by Feudtner et al.&nbsp;as an appendix to the above manuscript. However, those scripts can take many hours to run on large datasets.</td>
-</tr>
-<tr class="odd">
-<td>This package provides R functions to generate the CCC categories. Because the R functions are built with a C++ back-end, they are very computationally efficient.</td>
-</tr>
-</tbody>
-</table>
+<p>I have developed and published several R packages and tools.</p>
+<section id="phoenix" class="level2">
+<h2 class="anchored" data-anchor-id="phoenix">phoenix</h2>
+<p>The phoenix <a href="https://cran.r-project.org/package=phoenix">R package</a> and <a href="https://pypi.org/project/phoenix-sepsis/">Python module</a> implement the Phoenix criteria for pediatric sepsis and septic shock.</p>
+<ul>
+<li><p><a href="https://cu-dbmi-peds.github.io/phoenix/index.html">website</a></p></li>
+<li><p><a href="https://cran.r-project.org/package=phoenix">R package</a></p></li>
+<li><p><a href="https://pypi.org/project/phoenix-sepsis/">Python module</a></p></li>
+<li><p>Peer reviewed manuscript in JAMIA Open:</p>
+<ul>
+<li><a href="https://doi.org/10.1093/jamiaopen/ooae066">phoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria</a></li>
+</ul></li>
+</ul>
 </section>
-<section id="qwraps2-quick-wraps-2" class="level1">
-<h1><a name="qwraps2"></a>qwraps2: Quick Wraps 2</h1>
-<p><a href="#top">back to top</a></p>
-<p><a href="https://www.github.com/dewittpe/qwraps2" title="qwraps2 on GitHub" target="_blank"> <i class="fa fa-github fa-2x"></i> <span class="label">qwraps2 on GitHub</span> </a></p>
-<p><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" class="img-fluid" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a> <a href="https://travis-ci.org/dewittpe/qwraps2"><img src="https://travis-ci.org/dewittpe/qwraps2.svg?branch=master" class="img-fluid" alt="Build Status"></a> <a href="https://codecov.io/github/dewittpe/qwraps2?branch=master"><img src="https://img.shields.io/codecov/c/github/dewittpe/qwraps2/master.svg" class="img-fluid" alt="Coverage Status"></a> <a href="https://cran.r-project.org/package=qwraps2"><img src="http://www.r-pkg.org/badges/version/qwraps2.png" class="img-fluid" alt="CRAN_Status_Badge"></a> <a href="http://www.r-pkg.org/pkg/qwraps2"><img src="http://cranlogs.r-pkg.org/badges/qwraps2.png" class="img-fluid" alt="CRAN RStudio mirror downloads"></a> <a href="http://www.r-pkg.org/pkg/qwraps2"><img src="http://cranlogs.r-pkg.org/badges/grand-total/qwraps2.png" class="img-fluid" alt="CRAN RStudio mirror downloads"></a></p>
-<p>When I need to provide a data analysis report, a manuscript draft, or working on my dissertation, I am almost certainly working in a literate programming paradigm. Nearly every document I produce is done using some subset of of <a href="https://www.r-project.org/">R</a>, <a href="http://yihui.name/knitr/">knitr</a>, <a href="http://pandoc.org/">pandoc</a>, <a href="https://www.latex-project.org/">LaTeX</a>, or markdown. As such, I have commonly needed for format strings, build data summary tables, or build specific graphics. The qwraps2 package is a collection of functions and tools I have been building and collecting to make my life easier. There are many packages like this on <a href="https://cloud.r-project.org/">CRAN</a> and elsewhere. The API and use of qwraps2 is design for my idiosyncrasies. I hope you will try it out, check the vignettes and even contribute to the work on <a href="https://github.com/dewittpe/qwraps2">github</a>.</p>
-<hr>
+<section id="pedbp" class="level2">
+<h2 class="anchored" data-anchor-id="pedbp">pedbp</h2>
+<p>Data and utilities for estimating pediatric blood pressure percentiles by sex, age, and optionally height (stature) as described in <a href="doi:10.1001/jamanetworkopen.2022.36918">Martin et.al. (2022)</a>. Blood pressure percentiles for children under one year of age come from <a href="doi:10.1007/BF02171556">Gemelli et.al. (1990)</a>. Estimates of blood pressure percentiles for children at least one year of age are informed by data from the <a href="doi:10.1542/peds.2009-2107C">National Heart, Lung, and Blood Institute (NHLBI) and the Centers for Disease Control and Prevention (CDC)</a> or from <a href="doi:10.1542/peds.2012-1292">Lo et.al. (2013)</a>. The flowchart for selecting the informing data source comes from <a href="doi:10.1542/hpeds.2021-005998">Martin et.al. (2022)</a>.</p>
+<ul>
+<li><p><a href="https://www.peteredewitt.com/pedbp/">website</a></p></li>
+<li><p><a href="https://cran.r-project.org/package=pedbp">R package</a></p></li>
+<li><p>Peer reviewed manuscript in JAMA Network Open:</p>
+<ul>
+<li><a href="doi:10.1001/jamanetworkopen.2022.36918">Development of a Pediatric Blood Pressure Percentile Tool for Clinical Decision Support</a></li>
+</ul></li>
+</ul>
 </section>
-<section id="sccm-schwarz-christoffel-conformal-mapping" class="level1">
-<h1><a name="sccm"></a> sccm: Schwarz-Christoffel Conformal Mapping</h1>
-<p><a href="#top">back to top</a></p>
-<p><a href="https://www.github.com/dewittpe/sccm" title="sccm on GitHub" target="_blank"> <i class="fa fa-github fa-2x"></i> <span class="label">sccm on GitHub</span> </a></p>
-<p><a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" class="img-fluid" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a> <a href="https://travis-ci.org/dewittpe/sccm"><img src="https://travis-ci.org/dewittpe/sccm.svg?branch=master" class="img-fluid" alt="Build Status"></a> <a href="https://codecov.io/github/dewittpe/sccm?branch=master"><img src="https://img.shields.io/codecov/c/github/dewittpe/sccm/master.svg" class="img-fluid" alt="Coverage Status"></a> <a href="https://cran.r-project.org/package=sccm"><img src="http://www.r-pkg.org/badges/version/sccm.png" class="img-fluid" alt="CRAN_Status_Badge"></a></p>
-<p>An R package Providing a conformal mapping of one 2D polygon to a rectangular region via the Schwarz-Christoffel theorem.</p>
-<p>Methods are provide to find a convex hull for an arbitrary set (x, y) coordinates. This hull, and the points within, are, via an (inverse) Schwarz-Christoffel mapping, mapped to the unit disk. A second Schwarz-Christoffel mapping from the unit disk to an arbitrary rectangle is use to finish the conformal mapping.</p>
-<p>This package builds hulls via Andrew’s monotone chain algorithm implemented in C++. The Schwarz-Christoffel mappings are provided by the FORTRAN SCPACK by Lloyd N. Trefethen.</p>
-<p><strong>Not on CRAN</strong> The FORTRAN code writes to the terminal directly. It is possible that when the FORTRAN code errors that the R session will be terminated as well. For these reasons the package does not pass CRAN checks. My FORTRAN skills are minimal, and it is a low priority, to fix this problem. If you’d like to help fix see <a href="https://github.com/dewittpe/sccm/issues/1">Issue #1</a>.</p>
+<section id="redcapexporter" class="level2">
+<h2 class="anchored" data-anchor-id="redcapexporter">REDCapExporter</h2>
+</section>
+<section id="cpr" class="level2">
+<h2 class="anchored" data-anchor-id="cpr">cpr</h2>
+</section>
+<section id="pccc" class="level2">
+<h2 class="anchored" data-anchor-id="pccc">pccc</h2>
+</section>
+<section id="qwraps2" class="level2">
+<h2 class="anchored" data-anchor-id="qwraps2">qwraps2</h2>
+</section>
+<section id="ensr" class="level2">
+<h2 class="anchored" data-anchor-id="ensr">ensr</h2>
 
 
 </section>
