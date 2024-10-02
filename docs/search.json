@@ -4,56 +4,56 @@
     "href": "software.html",
     "title": "Software",
     "section": "",
-    "text": "I have developed and published several R packages and tools.\nListed here in alphabetical order. Click the link to get a summary of the tool and links to the software and more details."
-  },
-  {
-    "objectID": "software.html#phoenix",
-    "href": "software.html#phoenix",
-    "title": "Software",
-    "section": "phoenix",
-    "text": "phoenix\n     \nThe phoenix R package and Python module implement the Phoenix criteria for pediatric sepsis and septic shock.\n\nwebsite\nR package\nPython module\ngithub\nPeer reviewed manuscript in JAMIA Open:\n\nphoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria"
-  },
-  {
-    "objectID": "software.html#pedbp",
-    "href": "software.html#pedbp",
-    "title": "Software",
-    "section": "pedbp",
-    "text": "pedbp\n     \nData and utilities for estimating pediatric blood pressure percentiles by sex, age, and optionally height (stature) as described in Martin et.al. (2022). Blood pressure percentiles for children under one year of age come from Gemelli et.al. (1990). Estimates of blood pressure percentiles for children at least one year of age are informed by data from the National Heart, Lung, and Blood Institute (NHLBI) and the Centers for Disease Control and Prevention (CDC) or from Lo et.al. (2013). The flowchart for selecting the informing data source comes from Martin et.al. (2022).\n\nwebsite\nShiny app\nR package\ngithub\nPeer reviewed manuscript in JAMA Network Open:\n\nDevelopment of a Pediatric Blood Pressure Percentile Tool for Clinical Decision Support"
-  },
-  {
-    "objectID": "software.html#redcapexporter",
-    "href": "software.html#redcapexporter",
-    "title": "Software",
-    "section": "REDCapExporter",
-    "text": "REDCapExporter"
+    "text": "I have developed and published several R packages and tools.\nA subset of the packages I have published are listed here in alphabetical order. Click the link to get a summary of the tool and links to the software and more details."
   },
   {
     "objectID": "software.html#cpr",
     "href": "software.html#cpr",
     "title": "Software",
     "section": "cpr",
-    "text": "cpr"
-  },
-  {
-    "objectID": "software.html#pccc",
-    "href": "software.html#pccc",
-    "title": "Software",
-    "section": "pccc",
-    "text": "pccc"
-  },
-  {
-    "objectID": "software.html#qwraps2",
-    "href": "software.html#qwraps2",
-    "title": "Software",
-    "section": "qwraps2",
-    "text": "qwraps2"
+    "text": "cpr\nControl Polygon Reduction\n\nDescription\nImplementation of the Control Polygon Reduction and Control Net Reduction methods for finding parsimonious B-spline regression models.\n\n\nLinks\n\nwebsite\ngithub"
   },
   {
     "objectID": "software.html#ensr",
     "href": "software.html#ensr",
     "title": "Software",
     "section": "ensr",
-    "text": "ensr"
+    "text": "ensr\nElastic Net Searcher\n\nDescription\nElastic net regression models are controlled by two parameters, lambda, a measure of shrinkage, and alpha, a metric defining the model’s location on the spectrum between ridge and lasso regression. glmnet provides tools for selecting lambda via cross validation but no automated methods for selection of alpha. Elastic Net SearcheR automates the simultaneous selection of both lambda and alpha. Developed, in part, with support by NICHD R03 HD094912.\n\n\nLinks\n\n[github]("
+  },
+  {
+    "objectID": "software.html#pccc",
+    "href": "software.html#pccc",
+    "title": "Software",
+    "section": "pccc",
+    "text": "pccc\nPediatric Complex Chronic Conditions\n\nDescription\nAn implementation of the pediatric complex chronic conditions (CCC) classification system using R and C++.\n\n\nLinks\n\nCRAN\ngithub"
+  },
+  {
+    "objectID": "software.html#pedbp",
+    "href": "software.html#pedbp",
+    "title": "Software",
+    "section": "pedbp",
+    "text": "pedbp\nPediatric Blood Pressure Percentiles and Growth Charts\n\n\nDescription\nData and utilities for estimating pediatric blood pressure percentiles by sex, age, and optionally height (stature). Additionally, CDC and WHO growth charts have been implemented for things such as weight for age, weight for stature, stature for age, and others.\n\n\nLinks\n\nwebsite\nShiny app\nR package\ngithub\nPeer reviewed manuscript in JAMA Network Open:\n\nDevelopment of a Pediatric Blood Pressure Percentile Tool for Clinical Decision Support"
+  },
+  {
+    "objectID": "software.html#phoenix",
+    "href": "software.html#phoenix",
+    "title": "Software",
+    "section": "phoenix",
+    "text": "phoenix\nPhoenix Sepsis and Septic Shock Criteria\n\n\nDescription\nThe phoenix R package and Python module implement the Phoenix criteria for pediatric sepsis and septic shock.\n\n\nLinks\n\nwebsite\nR package\nPython module\ngithub\nPeer reviewed manuscript in JAMIA Open:\n\nphoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria"
+  },
+  {
+    "objectID": "software.html#qwraps2",
+    "href": "software.html#qwraps2",
+    "title": "Software",
+    "section": "qwraps2",
+    "text": "qwraps2\nQuick Wraps 2\n\nDescription\nA collection of tools I use for building summary tables, graphics, and general formating of reproducible reports.\n\n\nLinks\n\nwebsite\nCRAN\ngithub"
+  },
+  {
+    "objectID": "software.html#redcapexporter",
+    "href": "software.html#redcapexporter",
+    "title": "Software",
+    "section": "REDCapExporter",
+    "text": "REDCapExporter\nREDCap Exporter\n\nDescription\nA set of tools to download data and meta data from REDCap projects via the REDCap API. The metadata is used to format the records into a nearly analysis ready data set.\n\n\nLinks\n\nwebsite\nCRAN\ngithub"
   },
   {
     "objectID": "about.html",

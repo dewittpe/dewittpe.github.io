@@ -4,8 +4,9 @@ title: "Software"
 
 I have developed and published several R packages and tools.
 
-Listed here in alphabetical order.  Click the link to get a summary of the tool
-and links to the software and more details.
+A subset of the packages I have published are listed here in alphabetical order.
+Click the link to get a summary of the tool and links to the software and more
+details.
 
 - [cpr](#cpr)
 - [ensr](#ensr)
@@ -15,48 +16,69 @@ and links to the software and more details.
 - [qwraps2](#qwraps2)
 - [REDCapExporter](#REDCapExporter)
 
-## phoenix
+## cpr
 
-[![](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml)
-[![](https://codecov.io/gh/CU-DBMI-Peds/phoenix/graph/badge.svg?token=PKLXJ9SQOD)](https://app.codecov.io/gh/CU-DBMI-Peds/phoenix)
-[![](https://www.r-pkg.org/badges/version/phoenix)](https://CRAN.R-project.org/package=phoenix)
-[![](https://cranlogs.r-pkg.org/badges/last-month/phoenix?color=blue)](https://r-pkg.org/pkg/phoenix)
-[![](https://cranlogs.r-pkg.org/badges/grand-total/phoenix?color=blue)](https://r-pkg.org/pkg/phoenix)
+Control Polygon Reduction
 
-The phoenix [R package](https://cran.r-project.org/package=phoenix) and
-[Python module](https://pypi.org/project/phoenix-sepsis/) implement the Phoenix
-criteria for pediatric sepsis and septic shock.
+### Description
 
-- [website](https://cu-dbmi-peds.github.io/phoenix/index.html)
-- [R package](https://cran.r-project.org/package=phoenix)
-- [Python module](https://pypi.org/project/phoenix-sepsis/)
-- [github](https://github.com/cu-DBMI-Peds/phoenix/)
+Implementation of the Control Polygon Reduction and Control Net Reduction
+methods for finding parsimonious B-spline regression models.
 
-- Peer reviewed manuscript in JAMIA Open:
-  - [phoenix: an R package and Python module for calculating the Phoenix pediatric
-  sepsis score and criteria](https://doi.org/10.1093/jamiaopen/ooae066)
+### Links
+
+- [website](https://wwww.peteredewitt.com/cpr)
+- [github](https://www.github.com/dewittpe/cpr)
+
+## ensr
+Elastic Net Searcher
+
+### Description
+
+Elastic net regression models are controlled by two parameters,
+  lambda, a measure of shrinkage, and alpha, a metric defining the model's
+  location on the spectrum between ridge and lasso regression.
+  glmnet provides tools for selecting lambda via cross
+  validation but no automated methods for selection of alpha.  Elastic Net
+  SearcheR automates the simultaneous selection of both lambda and alpha.
+  Developed, in part, with support by NICHD R03 HD094912.
+
+### Links
+- [github](
+
+
+## pccc
+Pediatric Complex Chronic Conditions
+
+### Description
+An implementation of the pediatric complex chronic conditions (CCC)
+classification system using R and C++.
+
+### Links
+- [CRAN](https://cran.r-project.org/package=pccc)
+- [github](https://github.com/CUD2V/pccc)
 
 ## pedbp
 
+Pediatric Blood Pressure Percentiles and Growth Charts
+
+<!--
 [![](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![](https://github.com/dewittpe/pedbp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dewittpe/pedbp/actions/workflows/R-CMD-check.yaml)
 [![](https://codecov.io/gh/dewittpe/pedbp/branch/main/graph/badge.svg?token=DYiVkUwKrP)](https://app.codecov.io/gh/dewittpe/pedbp)
 [![](https://www.r-pkg.org/badges/version/pedbp)](https://cran.r-project.org/package=pedbp)
 [![](https://cranlogs.r-pkg.org/badges/last-month/pedbp?color=blue)](https://r-pkg.org/pkg/pedbp)
 [![](https://cranlogs.r-pkg.org/badges/grand-total/pedbp?color=blue)](https://r-pkg.org/pkg/pedbp)
+-->
+
+### Description
 
 Data and utilities for estimating pediatric blood pressure percentiles by sex,
-age, and optionally height (stature) as described in [Martin et.al.
-(2022)](doi:10.1001/jamanetworkopen.2022.36918). Blood pressure percentiles for
-children under one year of age come from [Gemelli et.al.
-(1990)](doi:10.1007/BF02171556).  Estimates of blood pressure percentiles for
-children at least one year of age are informed by data from the [National Heart,
-Lung, and Blood Institute (NHLBI) and the Centers for Disease Control and
-Prevention (CDC)](doi:10.1542/peds.2009-2107C) or from [Lo et.al.
-(2013)](doi:10.1542/peds.2012-1292).  The flowchart for selecting the informing
-data source comes from [Martin et.al. (2022)](doi:10.1542/hpeds.2021-005998).
+age, and optionally height (stature). Additionally, CDC and WHO growth charts
+have been implemented for things such as weight for age, weight for stature,
+stature for age, and others.
 
+### Links
 
 - [website](https://www.peteredewitt.com/pedbp/)
 - [Shiny app](https://dewittpe.shinyapps.io/pedbp/)
@@ -68,12 +90,60 @@ data source comes from [Martin et.al. (2022)](doi:10.1542/hpeds.2021-005998).
   Decision Support](doi:10.1001/jamanetworkopen.2022.36918)
 
 
-## REDCapExporter
+## phoenix
 
-## cpr
+Phoenix Sepsis and Septic Shock Criteria
 
-## pccc
+<!--
+[![](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml)
+[![](https://codecov.io/gh/CU-DBMI-Peds/phoenix/graph/badge.svg?token=PKLXJ9SQOD)](https://app.codecov.io/gh/CU-DBMI-Peds/phoenix)
+[![](https://www.r-pkg.org/badges/version/phoenix)](https://CRAN.R-project.org/package=phoenix)
+[![](https://cranlogs.r-pkg.org/badges/last-month/phoenix?color=blue)](https://r-pkg.org/pkg/phoenix)
+[![](https://cranlogs.r-pkg.org/badges/grand-total/phoenix?color=blue)](https://r-pkg.org/pkg/phoenix)
+-->
+
+### Description
+
+The phoenix R package and Python module implement the Phoenix criteria for
+pediatric sepsis and septic shock.
+
+### Links
+  - [website](https://cu-dbmi-peds.github.io/phoenix/index.html)
+  - [R package](https://cran.r-project.org/package=phoenix)
+  - [Python module](https://pypi.org/project/phoenix-sepsis/)
+  - [github](https://github.com/cu-DBMI-Peds/phoenix/)
+  - Peer reviewed manuscript in JAMIA Open:
+    - [phoenix: an R package and Python module for calculating the Phoenix pediatric
+    sepsis score and criteria](https://doi.org/10.1093/jamiaopen/ooae066)
 
 ## qwraps2
+Quick Wraps 2
 
-## ensr
+### Description
+A collection of tools I use for building summary tables, graphics, and general
+formating of reproducible reports.
+
+### Links
+- [website](https://www.peteredewitt.com/qwraps2)
+- [CRAN](https://cran.r-project.org/package=qwraps2)
+- [github](https://github.com/dewittpe/qwraps2)
+
+## REDCapExporter
+
+REDCap Exporter
+
+### Description
+A set of tools to download data and meta data from REDCap projects via the
+REDCap API.  The metadata is used to format the records into a nearly analysis
+ready data set.
+
+### Links
+
+- [website](https://www.peteredewitt.com/REDCapExporter)
+- [CRAN](https://cran.r-project.org/package=REDCapExporter)
+- [github](https://github.com/dewittpe/REDCapExporter)
+
+
+
+
