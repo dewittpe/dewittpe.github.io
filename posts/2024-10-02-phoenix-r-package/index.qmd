@@ -1,0 +1,296 @@
+---
+title: "phoenix R package and Python Module"
+author: "Peter E. DeWitt"
+date: "2024-10-02"
+categories: [news, R, sepsis, python, sql]
+---
+
+<img src="hexsticker.png" width="300px" align="right"/>
+
+Earlier this year I [published](https://doi.org/10.1093/jamiaopen/ooae066) an R
+package, Python module, and example SQL code for implementing the Phoenix sepsis
+criteria.
+
+The Phoenix criteria is the new standard diagnostic criteria for pediatric
+sepsis.  Papers on the international consensus and development of the Phoenix
+criteria were published in JAMA in January of 2024.
+
+The R package, Python module, and example SQL code, were written for two
+reasons:
+
+1. I know I will need to apply the Phoenix criteria to many more data sets and I
+   will benefit from having a package that already has the criteria defined.
+
+2. To provide other analysts with a way to apply the Phoenix criteria to their
+   data sets with no ambiguity in the implementation.
+
+
+There was one task as part of the development of Phoenix that I was frustrated
+by--implementing existing organ dysfunction and sepsis scores.  The
+implementation wasn't difficult from a coding point-of-view, it was difficult in
+understanding the edge cases which tended to not be well defined in the
+publications.  In my discussions with clinical experts, I found that what was
+completely clear to the clinician was marginally ambiguous to the person writing
+the code.
+
+An example of this ambiguity between clinician and coder was in the
+implementation of the Lactate scoring from the [PELOD-2](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6733216/)
+which was ultimately adapted as part of the Phoenix criteria.
+
+Below is PELOD-2 reported criteria (see table 1 in the published manuscript)
+along with a couple alternative notations.
+
+|               | 0 Points                          | 1 Point                            | 2 Points                          |
+| :--           | :----                             | :----                              | :----                             |
+| PELOD-2       | Lactate < 5 mmol/L                | Lactate 5-10.9 mmol/L              | Lactate &geq; 11 mmol/L           |
+| alternative 1 | Lactate < 5 mmol/L                | 5 mmol/L &leq; Lactate < 11 mmol/L | Lactate &geq; 11 mmol/L           |
+| alternative 2 | Lactate $\in (-\infty, 5)$ mmol/L | Lactate $\in [5, 11)$ mmol/L       | Lactate $\in [11, \infty)$ mmol/L |
+
+A couple things I want to point out.  The different between 0 and 1 point
+implicitly defines 5 mmol/L as 1 point due to the strict inequality for 0
+points.  That's fine, and quite common in the literature for other organ
+dysfunction scores.  The difference between 1 and 2 points is mildly ambiguous.
+Given that 2 points is defined as greater than or equal to 11 mmol/L then the
+implication that strictly less than 11 mmol/L (and greater or equal to 5 mmol/L)
+is 1 point.  So yes, the PELOD-2 definition is complete, but it
+requires a little bit of active and critical thinking to correctly implement.
+
+In my discussions with clinicians, Lactate is only really known, at least in
+their experience, to one decimal place and a negative value would just be
+ignored, as would an implausibly large value.  So, at the bedside, the
+definition is clear and complete.
+
+However, in the data set we had form 10 hospital system from
+North America, South America, Asia, and Africa, the majority only reported
+Lactate to one decimal point.  However, there were some hospital systems, and
+many reported lab results were Lactate $\in (10.9, 11.0)$ mmol/L. What are the
+rounding rules to use?
+
+To alleviate the ambiguity and provide the needed detail to the analysis with
+zero medical knowledge, I prefer the alternative 2 notation. This is
+complete and covers all possible values, cut points, and even impossible values.
+
+That said, the need to have the
+explicit lower bound is not necessary.  The development of Phoenix mapped
+missing values, a negative Lactate is not possible and could be considered a
+missing value, map to scores of zero.  So alternative 1 might be the best
+notation, for the scoring.  Alternative 1 has the advantage of being complete in
+that someone could implement the scoring for 1 point with out having to know
+anything about the scoring rules for 0 or 2 points.
+
+That all said, the actual implementation for the lactate scores is extremely
+simple:
+
+```r
+# R
+lct_score <- (lct >= 11) + (lct >= 5)
+```
+```python
+# python
+lct_score = (lct >= 11).astype(int) + (lct >= 5).astype(int)
+```
+```sql
+--SQL
+CASE WHEN lactate >= 11 THEN 2
+     WHEN lactate >=  5 THEN 1
+     ELSE 0 END AS lactate_points
+```
+
+Okay, stepping off my ridicules soap box.  The table published in the PELOD-2
+manuscript and the JAMA publications for Phoenix are
+sufficient and consistent with other published organ dysfunction scoring tables.
+I just didn't like having to think so hard and try to find additional detail to
+know if I was correctly rounding, or working with the cut points as intended.
+
+As one of the primary data analysts on the team that developed the Phoenix
+score, I know exactly how the scoring criteria were implemented.  By providing a
+code base that implements the scoring consistent with development scoring, any
+ambiguity in the published tables can be ignored as the code will just take care
+of it.
+
+## The phoenix R package
+
+At the time of writing this post, version `r packageVersion("phoenix")` of the phoenix package is
+available on [CRAN](https://cran.r-project.org/package=phoenix).
+
+```{r}
+library(phoenix)
+```
+
+Within the package there is an example data set called "sepsis" used for
+examples.  It is a data.frame with `r nrow(sepsis)` rows of `r ncol(sepsis)`
+variables.  Review the documentation for details on each of the variables.
+```{r}
+#| eval: false
+?sepsis
+```
+
+Here is an example of applying the cardiovascular scoring.  The score ranges
+from 0 to 6 points and considers three areas.
+
+First, is the patient on any vasocative medications?  0 points for no
+medications, 1 point for one medication, and 2 points for two or more
+medications. The set of possible medications is dobutamine, dopamine,
+epinephrine, milrinone, norepinephrine, and vasopressin.  A notable difference
+from Phoenix and other cardiovascular dysfunction scores based on medications,
+is that the dosage and the specific medication is not relevant to Phoenix.  The
+reason for this is that the Phoenix criteria needed to be applicable to high-
+and middle- or low-resourced environments.  Some places may not have access to
+all six medications, in our development set there was a site with only three of
+the six, a couple sites with only four of the six.  If the specific medications
+were considered then the sites that did not have the medication would
+artificially have less ill patients. Phoenix avoids this problem by just
+counting the medications. Additionally, other cardiovascular dysfunction scores
+considered the dosage of the medications.  The units for the dosage, generally
+&mu;g/kg/min, was not consistently report either.
+
+Next, lactate values contribute 0, 1, or 2 points, as noted above.
+
+Lastly, age adjusted mean arterial pressures (MAP) contributes another 0, 1, or
+2 points.
+
+Full details on the scoring can be found in the documentation for the
+phoenix_cardiovascular scoring function and the published manuscripts.
+```r
+?phoenix_cardiovascular
+```
+
+```{r}
+card_example <-
+  sepsis[c("pid", "dobutamine", "dopamine", "epinephrine", "milrinone",
+           "norepinephrine", "vasopressin", "lactate", "dbp", "sbp", "age")]
+
+card_example$score <-
+  phoenix_cardiovascular(
+    vasoactives = dobutamine + dopamine + epinephrine +
+                  milrinone + norepinephrine + vasopressin,
+    lactate     = lactate,
+    age         = age,
+    map         = map(sbp = sbp, dbp = dbp),
+    data        = sepsis)
+
+card_example
+```
+
+To apply the full Phoenix criteria to a data set, scoring based on respiratory,
+cardiovascular, coagulation, and neurologic dysfunction, can be done with a call
+to phoenix.
+
+```{r}
+phoenix_scores <-
+  phoenix(
+    # respiratory
+      pf_ratio = pao2 / fio2,
+      sf_ratio = ifelse(spo2 <= 97, spo2 / fio2, NA_real_),
+      imv = vent,
+      other_respiratory_support = as.integer(fio2 > 0.21),
+    # cardiovascular
+      vasoactives = dobutamine + dopamine + epinephrine + milrinone + norepinephrine + vasopressin,
+      lactate = lactate,
+      age = age,
+      map = map(sbp, dbp),
+    # coagulation
+      platelets = platelets,
+      inr = inr,
+      d_dimer = d_dimer,
+      fibrinogen = fibrinogen,
+    # neurologic
+      gcs = gcs_total,
+      fixed_pupils = as.integer(pupil == "both-fixed"),
+    data = sepsis
+  )
+str(phoenix_scores)
+```
+
+The return from phoenix is a data.frame with the individual organ dysfunction
+scores, the total Phoenix score, an indicator for Phoenix Sepsis (a score
+of 2 or more points), and an indicator for Phoenix septic shock (a score of 2 or
+more points with at least one cardiovascular dysfunction point).
+
+Additionally there is a Phoenix-8 scoring which extends the Phoenix scoring to
+include endocrine, immunologic, renal, and hepatic organ dysfunction scores and
+is implemented in the function phoenix8.
+```r
+?phoenix8
+```
+
+## Python module
+
+A python module is available on
+[PyPi](https://pypi.org/project/phoenix-sepsis/).  It mirrors the function of
+the R package closely and contains the same example data set.
+
+```{python}
+#| label: py_load_data
+import numpy as np
+import pandas as pd
+import importlib.resources
+import phoenix as phx
+
+path = importlib.resources.files('phoenix')
+sepsis = pd.read_csv(path.joinpath('data').joinpath('sepsis.csv'))
+```
+
+Scoring the cardiovascular dysfunction:
+
+```{python}
+#| label: py_phoenix_cardiovascular
+py_card = phx.phoenix_cardiovascular(
+    vasoactives = sepsis["dobutamine"] + sepsis["dopamine"] +
+                  sepsis["epinephrine"] + sepsis["milrinone"] +
+                  sepsis["norepinephrine"] + sepsis["vasopressin"],
+    lactate = sepsis["lactate"],
+    age = sepsis["age"],
+    map = phx.map(sepsis["sbp"], sepsis["dbp"])
+)
+print(type(py_card))
+print(py_card)
+```
+
+Scoring the Phoenix criteria:
+
+```{python}
+py_phoenix_scores = phx.phoenix(
+    # resp
+    pf_ratio = sepsis["pao2"] / sepsis["fio2"],
+    sf_ratio = np.where(sepsis["spo2"] <= 97, sepsis["spo2"] / sepsis["fio2"], np.nan),
+    imv      = sepsis["vent"],
+    other_respiratory_support = (sepsis["fio2"] > 0.21).astype(int).to_numpy(),
+    # cardio
+    vasoactives = sepsis["dobutamine"] + sepsis["dopamine"] +
+                  sepsis["epinephrine"] + sepsis["milrinone"] +
+                  sepsis["norepinephrine"] + sepsis["vasopressin"],
+    lactate = sepsis["lactate"],
+    age = sepsis["age"],
+    map = phx.map(sepsis["sbp"], sepsis["dbp"]),
+    # coag
+    platelets = sepsis['platelets'],
+    inr = sepsis['inr'],
+    d_dimer = sepsis['d_dimer'],
+    fibrinogen = sepsis['fibrinogen'],
+    # neuro
+    gcs = sepsis["gcs_total"],
+    fixed_pupils = (sepsis["pupil"] == "both-fixed").astype(int),
+    )
+print(py_phoenix_scores.info())
+print(py_phoenix_scores.head())
+```
+
+## Closing
+If you are interested in researching pediatric sepsis then the Phoenix criteria
+will be an important part of your research for the forseeable future.  The R
+pacakge, Python module, and example [SQL code](https://cu-dbmi-peds.github.io/phoenix/articles/sql.html)
+have been provided to simplify the implementation of the Phoenix criteria.
+
+## Links:
+
+- [Package website](cu-dbmi-peds.github.io/phoenix/)
+- [github](https://github.com/cu-DBMI-Peds/phoenix/)
+- [CRAN](https://cran.r-project.org/package=phoenix)
+- [PyPi](https://pypi.org/project/phoenix-sepsis/)
+- Peer Reviewed Manuscripts:
+  - [phoenix: an R package and Python module for calculating the Phoenix pediatric sepsis score and criteria](https://doi.org/10.1093/jamiaopen/ooae066)
+  - [International Consensus Criteria for Pediatric Sepsis and Septic Shock](doi:10.1001/jama.2024.0179)
+  - [Development and Validation of the Phoenix Criteria for Pediatric Sepsis and Septic Shock](doi:10.1001/jama.2024.0196)
+- Other blog posts:
+  - CU Anschutz: [Researchers Take Diagnosis of Pediatric Sepsis to the Next Level](https://news.cuanschutz.edu/news-stories/researchers-take-diagnosis-of-pediatric-sepsis-to-the-next-level)
