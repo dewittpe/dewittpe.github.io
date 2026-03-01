@@ -5,7 +5,7 @@ date: "2026-02-28"
 categories: [news, R, medicalcoder, pediatrics, comorbidities]
 ---
 
-![medicalcoder hex logo](hex.png){fig-width=3 in fig-align="right"}
+![medicalcoder hex logo](hex.png)
 
 My R package [medicalcoder](https://www.peteredewitt.com/medicalcoder) was
 updated to version 0.8.0 and released on
