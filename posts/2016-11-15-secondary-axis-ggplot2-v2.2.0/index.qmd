@@ -5,8 +5,8 @@ date-modified: 2024-10-01
 categories: [R, programming, ggplot2, phd]
 ---
 
-The recent release of [Hadley Whickham's](http://hadley.nz/)
-[ggplot2](http://ggplot2.org/) [version
+The recent release of [Hadley Wickham's](https://hadley.nz/)
+[ggplot2](https://ggplot2.org/) [version
 2.2.0](https://blog.rstudio.org/2016/11/14/ggplot2-2-2-0/) included several new
 features.  Notably
 
@@ -199,4 +199,3 @@ print(sessionInfo(), local = FALSE)
 ## [17] stringr_1.1.0    munsell_0.4.3    colorspace_1.3-0 gridExtra_2.2.1
 ## [21] methods_3.3.2
 ```
-

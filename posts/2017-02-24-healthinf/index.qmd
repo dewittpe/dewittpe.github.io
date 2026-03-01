@@ -7,8 +7,8 @@ categories: [news, abstract, conferences]
 
 I presented a paper at the 10th International Conference on Health Informatics
 in Porto Portugal, Feb 21-23, 2017.
-[HealthInf](http://www.healthinf.biostec.org/) is part of
-[BIOSTEC](http://biostec.org/).
+[HealthInf](https://www.healthinf.biostec.org/) is part of
+[BIOSTEC](https://biostec.org/).
 
 The paper I presented was on the use of git submodules as a data security
 solution for collaborative reproducible reporting. The focus was on using third
@@ -37,7 +37,7 @@ to teams of varying size in other collaborative situations.
 
 The paper itself will be published online as part of the BIOSTEC 2017
 Proceedings, at
-[Scitepress](http://www.scitepress.org/DigitalLibrary/HomePage.aspx).
+[Scitepress](https://www.scitepress.org/DigitalLibrary/HomePage.aspx).
 
 The conference was wonderful.  Great keynotes talks. For me, as a
 bio-statistician, it was great to see other aspects of bio-informatics, sensing,
@@ -55,7 +55,6 @@ the river front.  A must visit.
 ![](porto4.jpg)
 
 ![Dom Luis I Bridge](porto5.jpg)
-
 
 
 

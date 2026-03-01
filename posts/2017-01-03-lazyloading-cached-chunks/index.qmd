@@ -8,7 +8,7 @@ categories: [R, knitr, cache, qwraps2]
 
 If you cache code chunks when using
 [knitr](https://CRAN.R-project.org/package=knitr) to generate reproducible
-documents then you've likely had the issue arrise of needing to load the results
+documents then you've likely had the issue arise of needing to load the results
 of cached chunks into an active interactive R session.  The functions
 `lazyload_cache_dir` and `lazyload_cache_labels` have been added to the
 developmental version of [qwraps2](https://github.com/dewittpe/qwraps2) to make
@@ -169,4 +169,3 @@ the chunk being called.  See the documentation and
 [example 114-load-cache.Rmd](https://github.com/yihui/knitr-examples) from the 
 [knitr-examples](https://github.com/yihui/knitr-examples) repository for the use of
 `knitr::load_cache`.
-

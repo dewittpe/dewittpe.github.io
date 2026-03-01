@@ -10,6 +10,7 @@ details.
 
 - [cpr](#cpr)
 - [ensr](#ensr)
+- [medicalcolder](#medicalcolder)
 - [pccc](#pccc)
 - [pedbp](#pedbp)
 - [phoenix](#phoenix)
@@ -28,7 +29,7 @@ methods for finding parsimonious B-spline regression models.
 ### Links
 
 - [website](https://wwww.peteredewitt.com/cpr)
-- [github](https://www.github.com/dewittpe/cpr)
+- [GitHub](https://www.github.com/dewittpe/cpr)
 
 ## ensr
 Elastic Net Searcher
@@ -44,11 +45,12 @@ Elastic net regression models are controlled by two parameters,
   Developed, in part, with support by NICHD R03 HD094912.
 
 ### Links
-- [github](
-
+- [GitHub](https://github.com/dewittpe/ensr)
 
 ## pccc
 Pediatric Complex Chronic Conditions
+
+_This package has been surpassed by [medicalcolder](#medicalcolder)_
 
 ### Description
 An implementation of the pediatric complex chronic conditions (CCC)
@@ -56,7 +58,22 @@ classification system using R and C++.
 
 ### Links
 - [CRAN](https://cran.r-project.org/package=pccc)
-- [github](https://github.com/CUD2V/pccc)
+- [GitHub](https://github.com/CUD2V/pccc)
+
+## medicalcolder
+A Unified and Longitudinally Aware Framework for ICD-Based Comorbidity Assessment
+
+### Description
+Description: Provides comorbidity classification algorithms such as the
+Pediatric Complex Chronic Conditions (PCCC), Charlson, and Elixhauser indices,
+supports longitudinal comorbidity flagging across encounters, and includes
+utilities for working with medical coding schemas such as the International
+Classification of Diseases (ICD).
+
+### Links
+- [CRAN](https://cran.r-project.org/package=medicalcoder)
+- [GitHub](https://github.com/dewittpe/medicalcoder)
+- [website](https://www.peteredewitt.com/medicalcolder)
 
 ## pedbp
 
@@ -83,7 +100,7 @@ stature for age, and others.
 - [website](https://www.peteredewitt.com/pedbp/)
 - [Shiny app](https://dewittpe.shinyapps.io/pedbp/)
 - [R package](https://cran.r-project.org/package=pedbp)
-- [github](https://dewittpe.github.com/pedbp)
+- [GitHub](https://github.com/dewittpe/pedbp)
 
 - Peer reviewed manuscript in JAMA Network Open:
   - [Development of a Pediatric Blood Pressure Percentile Tool for Clinical
@@ -95,7 +112,7 @@ stature for age, and others.
 Phoenix Sepsis and Septic Shock Criteria
 
 <!--
-[![](http://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/CU-DBMI-Peds/phoenix/actions/workflows/R-CMD-check.yaml)
 [![](https://codecov.io/gh/CU-DBMI-Peds/phoenix/graph/badge.svg?token=PKLXJ9SQOD)](https://app.codecov.io/gh/CU-DBMI-Peds/phoenix)
 [![](https://www.r-pkg.org/badges/version/phoenix)](https://CRAN.R-project.org/package=phoenix)
@@ -143,7 +160,6 @@ ready data set.
 - [website](https://www.peteredewitt.com/REDCapExporter)
 - [CRAN](https://cran.r-project.org/package=REDCapExporter)
 - [github](https://github.com/dewittpe/REDCapExporter)
-
 
 
 

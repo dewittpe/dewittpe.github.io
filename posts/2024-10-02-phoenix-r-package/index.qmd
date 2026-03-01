@@ -278,13 +278,13 @@ print(py_phoenix_scores.head())
 
 ## Closing
 If you are interested in researching pediatric sepsis then the Phoenix criteria
-will be an important part of your research for the forseeable future.  The R
-pacakge, Python module, and example [SQL code](https://cu-dbmi-peds.github.io/phoenix/articles/sql.html)
+will be an important part of your research for the foreseeable future.  The R
+package, Python module, and example [SQL code](https://cu-dbmi-peds.github.io/phoenix/articles/sql.html)
 have been provided to simplify the implementation of the Phoenix criteria.
 
 ## Links:
 
-- [Package website](cu-dbmi-peds.github.io/phoenix/)
+- [Package website](https://cu-dbmi-peds.github.io/phoenix/)
 - [github](https://github.com/cu-DBMI-Peds/phoenix/)
 - [CRAN](https://cran.r-project.org/package=phoenix)
 - [PyPi](https://pypi.org/project/phoenix-sepsis/)

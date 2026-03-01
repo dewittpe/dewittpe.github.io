@@ -10,7 +10,7 @@ categories: [abstract, conferences, awards, cpr, phd, news]
 ![Shaking hands with IBS President Elizabeth Thompson after being
 awarded __Best Student Oral Presentation__](hand_shake_640x480.jpg)
 
-[The International Biometric Society](http://www.biometricsociety.org/) (IBS) held the
+[The International Biometric Society](https://www.biometricsociety.org/) (IBS) held the
 28th International Biometric Conference 10-15 July, 2016 in Victoria, British
 Columbia, Canada.  I had submitted my some of my dissertation work to this
 conference and gave an oral presentation:
@@ -84,7 +84,7 @@ A bibtex entry for this abstract:
   year  = {2016}, 
   organization = {International Biometric Society}, 
   address = {Victoria, British Columbia},
-  url = {http://www.biometricsociety.org/conference-abstracts/2016/},
+  url = {https://www.biometricsociety.org/conference-abstracts/2016/},
   isbn = {978-0-9821919-4-1}
 }
 </pre>

@@ -11,7 +11,7 @@ However, this function has its limits.  The following is an example of how to
 extend the use of `stats::update`.
 
 This post is an extension of the lightening talk I gave to the [Denver R Users
-Group](http://www.meetup.com/DenverRUG/) in March of 2016.  You can get the
+Group](https://www.meetup.com/DenverRUG/) in March of 2016.  You can get the
 [slides from that talk](https://github.com/dewittpe/drug-20160330) from my
 [github](https://github.com/dewittpe) page.
 
@@ -393,7 +393,7 @@ is.recursive(f)
 ```
 
 We have a language object with it an
-[environment](http://adv-r.had.co.nz/Environments.html) attribute. This object
+[environment](https://adv-r.had.co.nz/Environments.html) attribute. This object
 is not a `list`, but it is recursive ("`is.recursive(x)` returns `TRUE` if `x`
 has a recursive (list-like) structure and `FALSE` otherwise).  So, if we
 recursively apply `as.list` to `f` object we see a controlled deconstruction of
@@ -749,5 +749,5 @@ the implementation.
 
 *Acknowledgements:*
 I didn't figure out how to do this completely on my own.  I had posed a question
-on [stackoverflow](http://stackoverflow.com/q/25272387/1104685) which was the
+on [stackoverflow](https://stackoverflow.com/q/25272387/1104685) which was the
 basis for this post  and extensions.
