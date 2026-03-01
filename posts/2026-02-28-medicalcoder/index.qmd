@@ -1,0 +1,252 @@
+---
+title: "medicalcoder: A Unified and Longitudinally Aware Framework for ICD-Based Comorbidity Assessment in R"
+author: "Peter E. DeWitt"
+date: "2026-02-28"
+categories: [news, R, medicalcoder, pediatrics, comorbidities]
+---
+
+![medicalcoder hex logo](hex.png){fig-width=3 in fig-align="right"}
+
+My R package [medicalcoder](https://www.peteredewitt.com/medicalcoder) was
+updated to version 0.8.0 and released on
+[CRAN](https://cran.r-project.org/package=medicalcoder).
+
+At its core, _medicalcoder_ provides a portable, dependency-light framework for
+ICD-based comorbidity assessment in R. It is designed for reproducible health
+data workflows, especially in environments where dependency management,
+portability, and longitudinal inference matter.
+
+Version 0.8.0 expands stability, improves longitudinal flagging behavior, and
+extends Elixhauser support through the 2026 AHRQ ICD definitions.
+
+## Quick Start:
+
+```{r}
+#| label: medicalcoder
+library(medicalcoder)
+head(mdcr_longitudinal)
+```
+The example data set `mdcr_longitudinal` has records for
+`r length(unique(mdcr_longitudinal$patid))` patients.  The ICD codes are all
+expected to be diagnostic codes and there are both ICD-9 and ICD-10 records.
+
+```{r}
+#| label: icdv-by-patid
+xtabs(  ~ patid + icdv, data = mdcr_longitudinal)
+```
+
+A single call to `medicalcoder::comorbidities()` can flag Elixhauser
+comorbidities across ICD-9 and ICD-10 within a subject record in a single call.
+
+```{r}
+mdcr_rtn <-
+  medicalcoder::comorbidities(
+    data        = mdcr_longitudinal,  # object inheriting data.frame
+    icd.codes   = "code", # character string name of icd codes in data
+    id.vars     = c("patid"),
+    icdv.var    = "icdv", # variable in data denoting ICD version
+    dx          = 1L, # consider all ICD codes in data are diagnostic codes
+    poa         = 1L, # consider all codes present on admission
+    primarydx   = 0L, # consider all diagnosis codes secondary diagnoses.
+    method      = "elixhauser_quan2005",
+  )
+
+# To simplify the output, only show the columns that are not all zeros
+Filter(f = function(x) any(x > 0), mdcr_rtn)
+```
+
+The same results can be achieved using other tools such as the R package
+[comorbidity](https://cran.r-project.org/package=comorbidity), but it requires a
+lot more work. In the code that follows, you need to split the data by ICD
+version, manually recombine results, repair severity hierarchies, and restore
+object attributes before scoring.
+
+```{r}
+#| label: via-comorbidity
+
+# split the data by ICD version and call comorbidity::comorbidity twice with the
+# needed version-specific mapping
+r9 <-
+  comorbidity::comorbidity(
+    x = subset(mdcr_longitudinal, icdv == 9),
+    id = "patid",
+    code = "code",
+    map = "elixhauser_icd9_quan",
+    assign0 = TRUE
+  )
+r10 <-
+  comorbidity::comorbidity(
+    x = subset(mdcr_longitudinal, icdv == 10),
+    id = "patid",
+    code = "code",
+    map = "elixhauser_icd10_quan",
+    assign0 = TRUE
+  )
+
+# combine and aggregate the results
+rtn <- aggregate(. ~ patid, data = rbind(r9, r10), FUN = max)
+
+# clean up flags by severity (might not be needed in this specific example, but
+# is needed in general)
+rtn[["diabunc" ]][rtn$diabc]    <- 0L
+rtn[["hypunc"  ]][rtn$hypc]     <- 0L
+rtn[["solidtum"]][rtn$metacanc] <- 0L
+
+# apply the scoring, to use comorbidity::score the object needs to have certain
+# attributes which were lost when aggregating over the icd versions.  Replace
+# the attributes
+attributes(rtn)[c("class", "variable.labels", "map")] <-
+  attributes(r9)[c("class", "variable.labels", "map")]
+
+# the score is based on the weights by van Walraven et al. (2009)
+rtn[["score"]] <- comorbidity::score(x = rtn, weights = "vw", assign0 = TRUE)
+
+# simplify the output by only showing columns which are not all zeros
+Filter(function(x) any(x > 0), rtn)
+```
+
+The scoring approaches differ, but the underlying comorbidity flags for weight
+loss and paraplegia are identical. The key difference is the workflow:
+_medicalcoder_ handles mixed ICD versions in a single, unified call.
+
+## Longitudinal Flagging of Comorbidities
+
+Flagging comorbidities over a patient history should be a consideration for all
+researchers.  I will not say which conditions _must_ be considered
+longitudinally and which might not be, but I will say that chronic
+conditions, even when controlled, should be considered in research.
+
+It seems simple enough with methods such as Charlson and Elixhauser from [Quan
+et al. (2005)](https://doi.org/10.1097/01.mlr.0000182534.19832.83) to flag
+comorbidities at the encounter level and then carry the flag forward to
+subsequent encounters within a patient record.
+
+However, in some Elixhauser variants, simply carrying forward encounter-level
+flags can fail to capture a condition.
+
+For example, the [Agency for Healthcare Research and Quality
+(AHRQ)](https://www.ahrq.gov/) has an Elixhauser variant which requires
+consideration of whether or not the ICD code is reported as present-on-admission
+(POA) or not.  Some conditions are exempt from the POA requirement, that is, if
+the ICD is in the record then the patient has that condition:
+
+```{r}
+subset(medicalcoder::get_elixhauser_poa(), poa_required == 0L)$condition
+```
+
+Other conditions must have a POA flag to be counted as comorbidity for that
+encounter:
+
+```{r}
+subset(medicalcoder::get_elixhauser_poa(), poa_required == 1L)$condition
+```
+
+### A Simple Longitudinal Example
+
+Let's build an example patient. On encounter 1 there are no ICD codes. On
+encounter 2, there will be a non-POA ICD-10 code for severe liver disease. We
+will have encounters 3 and 4 with no ICD codes.
+
+```{r}
+apatient <-
+  data.frame(
+    patid = "Joe",
+    encid = 1:4,
+    icd10code = c("", "K72.10", "", ""),
+    poa = c(NA_integer_, 0L, NA_integer_, NA_integer_),
+    stringsAsFactors = FALSE
+  )
+```
+
+Our example patient, Joe, has ICD-10 code K72.10 reported on encounter 2.
+
+```{r}
+subset(medicalcoder::get_icd_codes(with.descriptions = TRUE), full_code == "K72.10")
+```
+
+If we try to flag comorbidities for Joe on the encounter level we get what we
+expect, no liver disease because liver disease requires the ICD code to be POA.
+
+```{r}
+medicalcoder::comorbidities(
+  data = apatient,
+  id.vars = c("patid", "encid"),
+  icd.codes = "icd10code",
+  poa.var = "poa",
+  primarydx = 0L,
+  method = "elixhauser_ahrq2025",
+  flag.method = "current" # default
+)[, c("patid", "encid", "LIVER_SEV")]
+```
+
+At the encounter level, this is correct behavior. The severe liver disease code
+was not present-on-admission, so it should not be treated as a comorbidity on encounter 2.
+
+Just to show that if the code was POA it would be flagged:
+```{r}
+medicalcoder::comorbidities(
+  data = apatient,
+  id.vars = c("patid", "encid"),
+  icd.codes = "icd10code",
+  poa = 1,
+  primarydx = 0L,
+  method = "elixhauser_ahrq2025",
+  flag.method = "current" # default
+)[, c("patid", "encid", "LIVER_SEV")]
+```
+
+So here, we can see that if the ICD code(s) for severe liver disease are not
+reported _and_ marked as POA for encounters 3 and 4, there is no way to
+retroactively flag the comorbidity later in the record.
+
+_medicalcoder_ takes care of this for you.  By using `flag.method =
+"cumulative"` we get the following:
+
+```{r}
+medicalcoder::comorbidities(
+  data = apatient,
+  id.vars = c("patid", "encid"),
+  icd.codes = "icd10code",
+  poa.var = "poa",
+  primarydx = 0L,
+  method = "elixhauser_ahrq2025",
+  flag.method = "cumulative"
+)[, c("patid", "encid", "LIVER_SEV")]
+```
+
+Here we see that the patient does not have the severe liver disease as a
+comorbidity on encounter 2 because the ICD code is not POA for encounter 2.
+Although the condition was not present-on-admission for encounter 2,
+the patient's underlying severe liver disease does not disappear from
+their history. By encounter 3, it is part of the patient's medical
+history and should be treated as a pre-existing comorbidity.
+Using `flag.method = "cumulative"` ensures that once a condition appears
+in the record, it is carried forward appropriately in subsequent encounters.
+
+## Conclusion
+
+ICD-based comorbidity assessment is foundational for risk adjustment,
+phenotyping, and health services research. Yet real-world data rarely arrive in
+clean, single-version, single-encounter form. They span ICD-9 and ICD-10
+transitions, include present-on-admission requirements, and unfold over time.
+
+_medicalcoder_ was designed with those realities in mind.
+
+With a single interface, it:
+
+* Handles mixed ICD versions transparently
+* Respects present-on-admission requirements
+* Enables cumulative longitudinal flagging
+* Maintains portability with base R (≥ 3.5.0) only
+
+The goal is not just convenience — it is correctness and reproducibility in
+complex health data environments.
+
+Install from CRAN:
+
+```r
+#| eval: false
+install.packages("medicalcoder")
+```
+
+And as always, feedback and real-world use cases are welcome.
