@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>medicalcoder: A Unified and Longitudinally Aware Framework for ICD-Based Comorbidity Assessment in R – Minding Broken Clocks</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -69,15 +72,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="../../">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-4d9afe2b8d18ee9fa5d0d57b5ed4214d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-18a095bd42787de304edc916d3818889.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-3f2251fd1662f09b24a40c8776ba697e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -203,19 +205,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p><img src="hex.png" class="img-fluid" alt="medicalcoder hex logo">{fig-width=3 in fig-align=“right”}</p>
+<p><img src="hex.png" width="300px" align="right"></p>
 <p>My R package <a href="https://www.peteredewitt.com/medicalcoder">medicalcoder</a> was updated to version 0.8.0 and released on <a href="https://cran.r-project.org/package=medicalcoder">CRAN</a>.</p>
 <p>At its core, <em>medicalcoder</em> provides a portable, dependency-light framework for ICD-based comorbidity assessment in R. It is designed for reproducible health data workflows, especially in environments where dependency management, portability, and longitudinal inference matter.</p>
 <p>Version 0.8.0 expands stability, improves longitudinal flagging behavior, and extends Elixhauser support through the 2026 AHRQ ICD definitions.</p>
 <section id="quick-start" class="level2">
 <h2 class="anchored" data-anchor-id="quick-start">Quick Start:</h2>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(medicalcoder)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in fun(libname, pkgname): strings not representable in native encoding
-will be translated to UTF-8</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mdcr_longitudinal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(medicalcoder)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mdcr_longitudinal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    patid       date icdv     code
 1 9663901 2016-03-18   10   Z77.22
@@ -228,7 +226,7 @@ will be translated to UTF-8</code></pre>
 </div>
 <p>The example data set <code>mdcr_longitudinal</code> has records for 3 patients. The ICD codes are all expected to be diagnostic codes and there are both ICD-9 and ICD-10 records.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xtabs</span>(  <span class="sc">~</span> patid <span class="sc">+</span> icdv, <span class="at">data =</span> mdcr_longitudinal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xtabs</span>(  <span class="sc">~</span> patid <span class="sc">+</span> icdv, <span class="at">data =</span> mdcr_longitudinal)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         icdv
 patid      9 10
@@ -239,20 +237,20 @@ patid      9 10
 </div>
 <p>A single call to <code>medicalcoder::comorbidities()</code> can flag Elixhauser comorbidities across ICD-9 and ICD-10 within a subject record in a single call.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mdcr_rtn <span class="ot">&lt;-</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data        =</span> mdcr_longitudinal,  <span class="co"># object inheriting data.frame</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">icd.codes   =</span> <span class="st">"code"</span>, <span class="co"># character string name of icd codes in data</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">id.vars     =</span> <span class="fu">c</span>(<span class="st">"patid"</span>),</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">icdv.var    =</span> <span class="st">"icdv"</span>, <span class="co"># variable in data denoting ICD version</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">dx          =</span> <span class="dv">1</span>L, <span class="co"># consider all ICD codes in data are diagnostic codes</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">poa         =</span> <span class="dv">1</span>L, <span class="co"># consider all codes present on admission</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">primarydx   =</span> <span class="dv">0</span>L, <span class="co"># consider all diagnosis codes secondary diagnoses.</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">method      =</span> <span class="st">"elixhauser_quan2005"</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># To simplify the output, only show the columns that are not all zeros</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Filter</span>(<span class="at">f =</span> <span class="cf">function</span>(x) <span class="fu">any</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>), mdcr_rtn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>mdcr_rtn <span class="ot">&lt;-</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data        =</span> mdcr_longitudinal,  <span class="co"># object inheriting data.frame</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">icd.codes   =</span> <span class="st">"code"</span>, <span class="co"># character string name of icd codes in data</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">id.vars     =</span> <span class="fu">c</span>(<span class="st">"patid"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">icdv.var    =</span> <span class="st">"icdv"</span>, <span class="co"># variable in data denoting ICD version</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">dx          =</span> <span class="dv">1</span>L, <span class="co"># consider all ICD codes in data are diagnostic codes</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">poa         =</span> <span class="dv">1</span>L, <span class="co"># consider all codes present on admission</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">primarydx   =</span> <span class="dv">0</span>L, <span class="co"># consider all diagnosis codes secondary diagnoses.</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">method      =</span> <span class="st">"elixhauser_quan2005"</span>,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># To simplify the output, only show the columns that are not all zeros</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="fu">Filter</span>(<span class="at">f =</span> <span class="cf">function</span>(x) <span class="fu">any</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>), mdcr_rtn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    patid WGHTLOSS PARA num_cmrb cmrb_flag mortality_index readmission_index
 1  231597        0    0        0         0               0                 0
@@ -262,45 +260,45 @@ patid      9 10
 </div>
 <p>The same results can be achieved using other tools such as the R package <a href="https://cran.r-project.org/package=comorbidity">comorbidity</a>, but it requires a lot more work. In the code that follows, you need to split the data by ICD version, manually recombine results, repair severity hierarchies, and restore object attributes before scoring.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split the data by ICD version and call comorbidity::comorbidity twice with the</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># needed version-specific mapping</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>r9 <span class="ot">&lt;-</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  comorbidity<span class="sc">::</span><span class="fu">comorbidity</span>(</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">subset</span>(mdcr_longitudinal, icdv <span class="sc">==</span> <span class="dv">9</span>),</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"patid"</span>,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">code =</span> <span class="st">"code"</span>,</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">map =</span> <span class="st">"elixhauser_icd9_quan"</span>,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">assign0 =</span> <span class="cn">TRUE</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>r10 <span class="ot">&lt;-</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  comorbidity<span class="sc">::</span><span class="fu">comorbidity</span>(</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">subset</span>(mdcr_longitudinal, icdv <span class="sc">==</span> <span class="dv">10</span>),</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"patid"</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">code =</span> <span class="st">"code"</span>,</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">map =</span> <span class="st">"elixhauser_icd10_quan"</span>,</span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">assign0 =</span> <span class="cn">TRUE</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># combine and aggregate the results</span></span>
-<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>rtn <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> patid, <span class="at">data =</span> <span class="fu">rbind</span>(r9, r10), <span class="at">FUN =</span> max)</span>
-<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up flags by severity (might not be needed in this specific example, but</span></span>
-<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co"># is needed in general)</span></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"diabunc"</span> ]][rtn<span class="sc">$</span>diabc]    <span class="ot">&lt;-</span> <span class="dv">0</span>L</span>
-<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"hypunc"</span>  ]][rtn<span class="sc">$</span>hypc]     <span class="ot">&lt;-</span> <span class="dv">0</span>L</span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"solidtum"</span>]][rtn<span class="sc">$</span>metacanc] <span class="ot">&lt;-</span> <span class="dv">0</span>L</span>
-<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the scoring, to use comorbidity::score the object needs to have certain</span></span>
-<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes which were lost when aggregating over the icd versions.  Replace</span></span>
-<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="co"># the attributes</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(rtn)[<span class="fu">c</span>(<span class="st">"class"</span>, <span class="st">"variable.labels"</span>, <span class="st">"map"</span>)] <span class="ot">&lt;-</span></span>
-<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">attributes</span>(r9)[<span class="fu">c</span>(<span class="st">"class"</span>, <span class="st">"variable.labels"</span>, <span class="st">"map"</span>)]</span>
-<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co"># the score is based on the weights by van Walraven et al. (2009)</span></span>
-<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"score"</span>]] <span class="ot">&lt;-</span> comorbidity<span class="sc">::</span><span class="fu">score</span>(<span class="at">x =</span> rtn, <span class="at">weights =</span> <span class="st">"vw"</span>, <span class="at">assign0 =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co"># simplify the output by only showing columns which are not all zeros</span></span>
-<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">Filter</span>(<span class="cf">function</span>(x) <span class="fu">any</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>), rtn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># split the data by ICD version and call comorbidity::comorbidity twice with the</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># needed version-specific mapping</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>r9 <span class="ot">&lt;-</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  comorbidity<span class="sc">::</span><span class="fu">comorbidity</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">subset</span>(mdcr_longitudinal, icdv <span class="sc">==</span> <span class="dv">9</span>),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"patid"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">code =</span> <span class="st">"code"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">map =</span> <span class="st">"elixhauser_icd9_quan"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">assign0 =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>r10 <span class="ot">&lt;-</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  comorbidity<span class="sc">::</span><span class="fu">comorbidity</span>(</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="fu">subset</span>(mdcr_longitudinal, icdv <span class="sc">==</span> <span class="dv">10</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">id =</span> <span class="st">"patid"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">code =</span> <span class="st">"code"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">map =</span> <span class="st">"elixhauser_icd10_quan"</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">assign0 =</span> <span class="cn">TRUE</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co"># combine and aggregate the results</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>rtn <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(. <span class="sc">~</span> patid, <span class="at">data =</span> <span class="fu">rbind</span>(r9, r10), <span class="at">FUN =</span> max)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co"># clean up flags by severity (might not be needed in this specific example, but</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co"># is needed in general)</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"diabunc"</span> ]][rtn<span class="sc">$</span>diabc]    <span class="ot">&lt;-</span> <span class="dv">0</span>L</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"hypunc"</span>  ]][rtn<span class="sc">$</span>hypc]     <span class="ot">&lt;-</span> <span class="dv">0</span>L</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"solidtum"</span>]][rtn<span class="sc">$</span>metacanc] <span class="ot">&lt;-</span> <span class="dv">0</span>L</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># apply the scoring, to use comorbidity::score the object needs to have certain</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="co"># attributes which were lost when aggregating over the icd versions.  Replace</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="co"># the attributes</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(rtn)[<span class="fu">c</span>(<span class="st">"class"</span>, <span class="st">"variable.labels"</span>, <span class="st">"map"</span>)] <span class="ot">&lt;-</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">attributes</span>(r9)[<span class="fu">c</span>(<span class="st">"class"</span>, <span class="st">"variable.labels"</span>, <span class="st">"map"</span>)]</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co"># the score is based on the weights by van Walraven et al. (2009)</span></span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>rtn[[<span class="st">"score"</span>]] <span class="ot">&lt;-</span> comorbidity<span class="sc">::</span><span class="fu">score</span>(<span class="at">x =</span> rtn, <span class="at">weights =</span> <span class="st">"vw"</span>, <span class="at">assign0 =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="co"># simplify the output by only showing columns which are not all zeros</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="fu">Filter</span>(<span class="cf">function</span>(x) <span class="fu">any</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>), rtn)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    patid para wloss score
 1  231597    0     0     0
@@ -317,7 +315,7 @@ patid      9 10
 <p>However, in some Elixhauser variants, simply carrying forward encounter-level flags can fail to capture a condition.</p>
 <p>For example, the <a href="https://www.ahrq.gov/">Agency for Healthcare Research and Quality (AHRQ)</a> has an Elixhauser variant which requires consideration of whether or not the ICD code is reported as present-on-admission (POA) or not. Some conditions are exempt from the POA requirement, that is, if the ICD is in the record then the patient has that condition:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(medicalcoder<span class="sc">::</span><span class="fu">get_elixhauser_poa</span>(), poa_required <span class="sc">==</span> <span class="dv">0</span>L)<span class="sc">$</span>condition</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(medicalcoder<span class="sc">::</span><span class="fu">get_elixhauser_poa</span>(), poa_required <span class="sc">==</span> <span class="dv">0</span>L)<span class="sc">$</span>condition</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "AIDS"                "ALCOHOL"             "AUTOIMMUNE"         
  [4] "CANCER_LEUK"         "CANCER_LYMPH"        "CANCER_METS"        
@@ -331,7 +329,7 @@ patid      9 10
 </div>
 <p>Other conditions must have a POA flag to be counted as comorbidity for that encounter:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(medicalcoder<span class="sc">::</span><span class="fu">get_elixhauser_poa</span>(), poa_required <span class="sc">==</span> <span class="dv">1</span>L)<span class="sc">$</span>condition</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(medicalcoder<span class="sc">::</span><span class="fu">get_elixhauser_poa</span>(), poa_required <span class="sc">==</span> <span class="dv">1</span>L)<span class="sc">$</span>condition</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "ANEMDEF"            "BLDLOSS"            "CBVD"              
  [4] "COAG"               "HF"                 "LIVER_MLD"         
@@ -348,36 +346,36 @@ patid      9 10
 <h3 class="anchored" data-anchor-id="a-simple-longitudinal-example">A Simple Longitudinal Example</h3>
 <p>Let’s build an example patient. On encounter 1 there are no ICD codes. On encounter 2, there will be a non-POA ICD-10 code for severe liver disease. We will have encounters 3 and 4 with no ICD codes.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>apatient <span class="ot">&lt;-</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">patid =</span> <span class="st">"Joe"</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">encid =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">icd10code =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"K72.10"</span>, <span class="st">""</span>, <span class="st">""</span>),</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">poa =</span> <span class="fu">c</span>(<span class="cn">NA_integer_</span>, <span class="dv">0</span>L, <span class="cn">NA_integer_</span>, <span class="cn">NA_integer_</span>),</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>apatient <span class="ot">&lt;-</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">patid =</span> <span class="st">"Joe"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">encid =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">icd10code =</span> <span class="fu">c</span>(<span class="st">""</span>, <span class="st">"K72.10"</span>, <span class="st">""</span>, <span class="st">""</span>),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">poa =</span> <span class="fu">c</span>(<span class="cn">NA_integer_</span>, <span class="dv">0</span>L, <span class="cn">NA_integer_</span>, <span class="cn">NA_integer_</span>),</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Our example patient, Joe, has ICD-10 code K72.10 reported on encounter 2.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(medicalcoder<span class="sc">::</span><span class="fu">get_icd_codes</span>(<span class="at">with.descriptions =</span> <span class="cn">TRUE</span>), full_code <span class="sc">==</span> <span class="st">"K72.10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">subset</span>(medicalcoder<span class="sc">::</span><span class="fu">get_icd_codes</span>(<span class="at">with.descriptions =</span> <span class="cn">TRUE</span>), full_code <span class="sc">==</span> <span class="st">"K72.10"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       icdv dx full_code  code src known_start known_end assignable_start
-151385   10  1    K72.10 K7210 cms        2014      2026             2014
+177676   10  1    K72.10 K7210 cms        2014      2027             2014
        assignable_end                                 desc desc_start desc_end
-151385           2026 Chronic hepatic failure without coma       2014     2026</code></pre>
+177676           2027 Chronic hepatic failure without coma       2014     2027</code></pre>
 </div>
 </div>
 <p>If we try to flag comorbidities for Joe on the encounter level we get what we expect, no liver disease because liver disease requires the ICD code to be POA.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> apatient,</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>),</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">icd.codes =</span> <span class="st">"icd10code"</span>,</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poa.var =</span> <span class="st">"poa"</span>,</span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">primarydx =</span> <span class="dv">0</span>L,</span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"elixhauser_ahrq2025"</span>,</span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">flag.method =</span> <span class="st">"current"</span> <span class="co"># default</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>)[, <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>, <span class="st">"LIVER_SEV"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> apatient,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>),</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">icd.codes =</span> <span class="st">"icd10code"</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poa.var =</span> <span class="st">"poa"</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">primarydx =</span> <span class="dv">0</span>L,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"elixhauser_ahrq2025"</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">flag.method =</span> <span class="st">"current"</span> <span class="co"># default</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>)[, <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>, <span class="st">"LIVER_SEV"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  patid encid LIVER_SEV
 1   Joe     1         0
@@ -389,15 +387,15 @@ patid      9 10
 <p>At the encounter level, this is correct behavior. The severe liver disease code was not present-on-admission, so it should not be treated as a comorbidity on encounter 2.</p>
 <p>Just to show that if the code was POA it would be flagged:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> apatient,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>),</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">icd.codes =</span> <span class="st">"icd10code"</span>,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poa =</span> <span class="dv">1</span>,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">primarydx =</span> <span class="dv">0</span>L,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"elixhauser_ahrq2025"</span>,</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">flag.method =</span> <span class="st">"current"</span> <span class="co"># default</span></span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>)[, <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>, <span class="st">"LIVER_SEV"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> apatient,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>),</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">icd.codes =</span> <span class="st">"icd10code"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poa =</span> <span class="dv">1</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">primarydx =</span> <span class="dv">0</span>L,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"elixhauser_ahrq2025"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">flag.method =</span> <span class="st">"current"</span> <span class="co"># default</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>)[, <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>, <span class="st">"LIVER_SEV"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  patid encid LIVER_SEV
 1   Joe     1         0
@@ -409,15 +407,15 @@ patid      9 10
 <p>So here, we can see that if the ICD code(s) for severe liver disease are not reported <em>and</em> marked as POA for encounters 3 and 4, there is no way to retroactively flag the comorbidity later in the record.</p>
 <p><em>medicalcoder</em> takes care of this for you. By using <code>flag.method = "cumulative"</code> we get the following:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> apatient,</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>),</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">icd.codes =</span> <span class="st">"icd10code"</span>,</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poa.var =</span> <span class="st">"poa"</span>,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">primarydx =</span> <span class="dv">0</span>L,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"elixhauser_ahrq2025"</span>,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">flag.method =</span> <span class="st">"cumulative"</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>)[, <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>, <span class="st">"LIVER_SEV"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>medicalcoder<span class="sc">::</span><span class="fu">comorbidities</span>(</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> apatient,</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>),</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">icd.codes =</span> <span class="st">"icd10code"</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">poa.var =</span> <span class="st">"poa"</span>,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">primarydx =</span> <span class="dv">0</span>L,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">method =</span> <span class="st">"elixhauser_ahrq2025"</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">flag.method =</span> <span class="st">"cumulative"</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>)[, <span class="fu">c</span>(<span class="st">"patid"</span>, <span class="st">"encid"</span>, <span class="st">"LIVER_SEV"</span>)]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  patid encid LIVER_SEV
 1   Joe     1         0
@@ -442,8 +440,8 @@ patid      9 10
 </ul>
 <p>The goal is not just convenience — it is correctness and reproducibility in complex health data environments.</p>
 <p>Install from CRAN:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"medicalcoder"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"medicalcoder"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>And as always, feedback and real-world use cases are welcome.</p>
 
 
