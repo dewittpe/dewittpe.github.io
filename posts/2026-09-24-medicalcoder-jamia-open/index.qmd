@@ -1,0 +1,44 @@
+---
+title: "medicalcoder published in JAMIA Open"
+author: "Peter E. DeWitt"
+date: "2026-09-24"
+categories: [news, R, medicalcoder, publications]
+---
+
+<img src="m_jamiaoa_9_5cover.jpeg" width="300px" align="right" alt="JAMIA Open Cover"/>
+
+I’m happy to share that our paper describing
+[`medicalcoder`](https://www.peteredewitt.com/medicalcoder) has been published
+in [*JAMIA Open*](https://doi.org/10.1093/jamiaopen/ooag182):
+
+> DeWitt PE, Russell S, Feinstein JA, Rebull MN, Bennett TD. “medicalcoder: a
+> unified and longitudinally aware framework for International Classification
+> of Diseases code-based comorbidity assessment in R.” *JAMIA Open*. 2026;
+> 9(5):ooag182. [doi:10.1093/jamiaopen/ooag182](https://doi.org/10.1093/jamiaopen/ooag182).
+
+Comorbidity algorithms based on International Classification of Diseases (ICD)
+codes are widely used to describe patient populations and support risk
+adjustment. Applying them to real clinical data can be awkward: datasets may
+contain both ICD-9 and ICD-10 codes, and some algorithms depend on details such
+as whether a diagnosis was present on admission or marked as the primary
+diagnosis. Many existing tools also work one encounter at a time, while health
+records often need to be considered across time.
+
+The paper describes how `medicalcoder` brings these tasks into one R interface.
+It includes an internal ICD code database and implementations of variants of
+the Charlson, Elixhauser, and Pediatric Complex Chronic Conditions (PCCC)
+algorithms. The package accepts full or compact ICD codes, supports mixed
+ICD-9/ICD-10 data, and can use present-on-admission and primary-diagnosis
+indicators. Comorbidity flags can be calculated for individual encounters or
+carried forward cumulatively across a patient's record.
+
+We also report that `medicalcoder` runs with R 3.5.0 or later and does not
+require additional packages, an internet connection, or external data files.
+Its outputs are consistent with published reference implementations. The
+longitudinal option can identify additional flags when a carry-forward
+assumption is appropriate, while respecting algorithm logic for present-on-
+admission and technology-dependent conditions.
+
+The article is available through [*JAMIA Open*](https://doi.org/10.1093/jamiaopen/ooag182).
+The package is available on [CRAN](https://cran.r-project.org/package=medicalcoder)
+and [GitHub](https://github.com/dewittpe/medicalcoder).
